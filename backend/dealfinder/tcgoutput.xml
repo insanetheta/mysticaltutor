@@ -1,0 +1,72 @@
+<products>
+<product>
+<id>12345</id>
+<hiprice>0.2500</hiprice>
+<lowprice>0.0400</lowprice>
+<avgprice>0.1011</avgprice>
+<link><![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Flameborn Viron&partner=TCGTEST]]></link>
+</product>
+<product>
+<id>123453</id>
+<hiprice>15.0</hiprice>
+<lowprice>6.72</lowprice>
+<avgprice>4.64</avgprice>
+<link><![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Siege Rhino&partner=TCGTEST]]></link>
+</product>
+<product>
+<id>12346</id>
+<hiprice>1.12</hiprice>
+<lowprice>0.08</lowprice>
+<avgprice>0.15</avgprice>
+<link><![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Dragon Throne of Tarkir&partner=TCGTEST]]></link>
+</product>
+<product>
+<id>12347</id>
+<hiprice>1.20</hiprice>
+<lowprice>0.24</lowprice>
+<avgprice>0.05</avgprice>
+<link><![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Dragon-Style Twins&partner=TCGTEST]]></link>
+</product>
+<product>
+<id>12348</id>
+<hiprice>9.0</hiprice>
+<lowprice>5.74</lowprice>
+<avgprice>3.69</avgprice>
+<link><![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Dig Through Time&partner=TCGTEST]]></link>
+</product>
+<product>
+<id>12349</id>
+<hiprice>21.0</hiprice>
+<lowprice>13.60</lowprice>
+<avgprice>10.0</avgprice>
+<link><![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Flooded Strand&partner=TCGTEST]]></link>
+</product>
+<product>
+<id>12350</id>
+<hiprice>25.09</hiprice>
+<lowprice>13.50</lowprice>
+<avgprice>9.0</avgprice>
+<link><![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Polluted Delta&partner=TCGTEST]]></link>
+</product>
+<product>
+<id>12351</id>
+<hiprice>30.0</hiprice>
+<lowprice>11.31</lowprice>
+<avgprice>7.75</avgprice>
+<link><![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Sorin, Solemn Visitor&partner=TCGTEST]]></link>
+</product>
+<product>
+<id>12352</id>
+<hiprice>42.20</hiprice>
+<lowprice>9.44</lowprice>
+<avgprice>6.0</avgprice>
+<link><![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Sarkhan, the Dragonspeaker&partner=TCGTEST]]></link>
+</product>
+<product>
+<id>12353</id>
+<hiprice>19.10</hiprice>
+<lowprice>5.19</lowprice>
+<avgprice>3.59</avgprice>
+<link><![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Wingmate Roc&partner=TCGTEST]]></link>
+</product>
+</products>

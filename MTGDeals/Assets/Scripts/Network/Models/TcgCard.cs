@@ -16,8 +16,8 @@ namespace DealFinder.Network.Models
         [JsonProperty]
         public decimal LowPrice { get; private set; }
 
-        //[JsonProperty]
-        //public int TcgId { get; private set; }
+        [JsonProperty]
+        public int MultiverseID { get; private set; }
 
         [JsonProperty]
         public string Link { get; private set; }

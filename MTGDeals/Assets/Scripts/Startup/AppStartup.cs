@@ -20,7 +20,10 @@ public class AppStartup : MonoBehaviour
         yield return StartCoroutine(CardDataManager.GetInstance().CardListRequest());
 
         // Create The FrontPage
-        GameObject FrontPage = Instantiate(Resources.Load<GameObject>("FrontPage/FrontPage")) as GameObject;
+        //GameObject FrontPage = Instantiate(Resources.Load<GameObject>("FrontPage/FrontPage")) as GameObject;
+        GameObject FrontPage = Instantiate(Resources.Load<GameObject>("CardDetail/CardDetail")) as GameObject;
+        
+        
         FrontPage.transform.parent = AnchorRef.transform;
         FrontPage.transform.localScale = new Vector3(1, 1, 1);
         FrontPage.transform.localPosition = new Vector3(0, 220, 0);

@@ -29,7 +29,7 @@
 
 	{% csrf_token %}
 	<label>{{ card.multiverseId }}</label><br/>
-	<img src="http://api.mtgdb.info/content/card_images/{{ card.multiverseId }}.jpeg"/>
+	<img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid={{ card.multiverseId }}&type=card"/>
 	{% if None != card.product %}
 	<a href="{{card.product.link}}">Buy At TCGPlayer</a>
 	{% endif %}

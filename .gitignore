@@ -5,6 +5,11 @@ Temp/
 Obj/
 UnityGenerated/
 Library/
+
+# =============== #
+# Card Data       #
+# =============== #
+jsoncarddata/
  
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
@@ -19,6 +24,16 @@ ExportedObj/
 *.user
 *.unityproj
 *.booproj
+
+# ================ #
+# Python generated #
+# ================ #
+*.pyc
+
+# ============ #
+# SqlLite DB   #
+# ============ # 
+*.sqlite3
  
 # ============ #
 # OS generated #

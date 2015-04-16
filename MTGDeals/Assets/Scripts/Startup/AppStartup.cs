@@ -5,7 +5,7 @@ using DealFinder.Network.Models;
 
 public class AppStartup : MonoBehaviour
 {
-    public GameObject AnchorRef;
+    public GameObject ViewAnchorRef;
 
 	// Use this for initialization
 	void Start () 
@@ -15,17 +15,11 @@ public class AppStartup : MonoBehaviour
 
     IEnumerator Startup()
     {
-        //Initiate The Singleton
+        //Initiate The Singletons
         Transaction<List<TcgCard>> t = new Transaction<List<TcgCard>>();
         yield return StartCoroutine(CardDataManager.GetInstance().CardListRequest());
 
-        // Create The FrontPage
-        //GameObject FrontPage = Instantiate(Resources.Load<GameObject>("FrontPage/FrontPage")) as GameObject;
-        GameObject FrontPage = Instantiate(Resources.Load<GameObject>("CardDetail/CardDetail")) as GameObject;
-        
-        
-        FrontPage.transform.parent = AnchorRef.transform;
-        FrontPage.transform.localScale = new Vector3(1, 1, 1);
-        FrontPage.transform.localPosition = new Vector3(0, 220, 0);
+        ViewController.GetInstance().Initialize(ViewAnchorRef.transform);
+
     }
 }

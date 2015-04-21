@@ -5,6 +5,7 @@ from dealfinder.models import Card
 from dealfinder import productFetcher
 from django.core.exceptions import ValidationError
 from django.db import models
+from settings import PROJECT_ROOT
 import requests
 import json
 

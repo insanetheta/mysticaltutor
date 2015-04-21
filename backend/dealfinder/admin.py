@@ -11,10 +11,10 @@ class ProductAdmin(admin.ModelAdmin):
 	list_display = ('productName', 'tcgId')
 
 class CardSetAdmin(admin.ModelAdmin):
-	list_display = ('name', 'setId')
+	list_display = ('name', 'setCode')
 	
 class CardAdmin(admin.ModelAdmin):
-	list_display = ('name', 'cardSetName')
+	list_display = ('name', 'multiverseId')
 	
 admin.site.register(Product, ProductAdmin)
 admin.site.register(CardSet, CardSetAdmin)

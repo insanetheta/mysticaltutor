@@ -1,72 +1,1208 @@
 <products>
-<product>
-<id>12345</id>
-<hiprice>0.2500</hiprice>
-<lowprice>0.0400</lowprice>
-<avgprice>0.1011</avgprice>
-<link><![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Flameborn Viron&partner=TCGTEST]]></link>
-</product>
-<product>
-<id>123453</id>
-<hiprice>15.0</hiprice>
-<lowprice>6.72</lowprice>
-<avgprice>4.64</avgprice>
-<link><![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Siege Rhino&partner=TCGTEST]]></link>
-</product>
-<product>
-<id>12346</id>
-<hiprice>1.12</hiprice>
-<lowprice>0.08</lowprice>
-<avgprice>0.15</avgprice>
-<link><![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Dragon Throne of Tarkir&partner=TCGTEST]]></link>
-</product>
-<product>
-<id>12347</id>
-<hiprice>1.20</hiprice>
-<lowprice>0.24</lowprice>
-<avgprice>0.05</avgprice>
-<link><![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Dragon-Style Twins&partner=TCGTEST]]></link>
-</product>
-<product>
-<id>12348</id>
-<hiprice>9.0</hiprice>
-<lowprice>5.74</lowprice>
-<avgprice>3.69</avgprice>
-<link><![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Dig Through Time&partner=TCGTEST]]></link>
-</product>
-<product>
-<id>12349</id>
-<hiprice>21.0</hiprice>
-<lowprice>13.60</lowprice>
-<avgprice>10.0</avgprice>
-<link><![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Flooded Strand&partner=TCGTEST]]></link>
-</product>
-<product>
-<id>12350</id>
-<hiprice>25.09</hiprice>
-<lowprice>13.50</lowprice>
-<avgprice>9.0</avgprice>
-<link><![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Polluted Delta&partner=TCGTEST]]></link>
-</product>
-<product>
-<id>12351</id>
-<hiprice>30.0</hiprice>
-<lowprice>11.31</lowprice>
-<avgprice>7.75</avgprice>
-<link><![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Sorin, Solemn Visitor&partner=TCGTEST]]></link>
-</product>
-<product>
-<id>12352</id>
-<hiprice>42.20</hiprice>
-<lowprice>9.44</lowprice>
-<avgprice>6.0</avgprice>
-<link><![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Sarkhan, the Dragonspeaker&partner=TCGTEST]]></link>
-</product>
-<product>
-<id>12353</id>
-<hiprice>19.10</hiprice>
-<lowprice>5.19</lowprice>
-<avgprice>3.59</avgprice>
-<link><![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Wingmate Roc&partner=TCGTEST]]></link>
-</product>
+    <product>
+        <name>Flameborn Viron</name>
+        <hiprice>0.2500</hiprice>
+        <lowprice>0.0400</lowprice>
+        <avgprice>0.1011</avgprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Flameborn Viron&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Siege Rhino</name>
+        <hiprice>15.0</hiprice>
+        <lowprice>6.72</lowprice>
+        <avgprice>4.64</avgprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Siege Rhino&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Dragon Throne of Tarkir</name>
+        <hiprice>1.12</hiprice>
+        <lowprice>0.08</lowprice>
+        <avgprice>0.15</avgprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Dragon Throne of Tarkir&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Dragon-Style Twins</name>
+        <hiprice>1.20</hiprice>
+        <lowprice>0.24</lowprice>
+        <avgprice>0.05</avgprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Dragon-Style Twins&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Dig Through Time</name>
+        <hiprice>9.0</hiprice>
+        <lowprice>5.74</lowprice>
+        <avgprice>3.69</avgprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Dig Through Time&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Flooded Strand</name>
+        <hiprice>21.0</hiprice>
+        <lowprice>13.60</lowprice>
+        <avgprice>10.0</avgprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Flooded Strand&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Polluted Delta</name>
+        <hiprice>25.09</hiprice>
+        <lowprice>13.50</lowprice>
+        <avgprice>9.0</avgprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Polluted Delta&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Sorin, Solemn Visitor</name>
+        <hiprice>30.0</hiprice>
+        <lowprice>11.31</lowprice>
+        <avgprice>7.75</avgprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Sorin, Solemn Visitor&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Sarkhan, the Dragonspeaker</name>
+        <hiprice>42.20</hiprice>
+        <lowprice>9.44</lowprice>
+        <avgprice>6.0</avgprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Sarkhan, the Dragonspeaker&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Wingmate Roc</name>
+        <hiprice>19.10</hiprice>
+        <lowprice>5.19</lowprice>
+        <avgprice>3.59</avgprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Wingmate Roc&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Volcanic Island</name>
+        <hiprice>3499.95</hiprice>
+        <lowprice>3499.95</lowprice>
+        <avgprice>3499.95</avgprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Volcanic Island&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Volcanic Island</name>
+        <hiprice>3499.95</hiprice>
+        <lowprice>3499.95</lowprice>
+        <avgprice>3499.95</avgprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=&Volcanic Islandpartner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Underground Sea</name>
+        <hiprice>4500.00</hiprice>
+        <lowprice>4279.99</lowprice>
+        <avgprice>4279.99</avgprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Underground Sea&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Volcanic Island</name>
+        <hiprice>1500.00</hiprice>
+        <lowprice>1500.00</lowprice>
+        <avgprice>1500.00</avgprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Volcanic Island&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Tundra</name>
+        <hiprice>2200.00</hiprice>
+        <lowprice>2099.60</lowprice>
+        <avgprice>1395.63</avgprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Tundra&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Bayou</name>
+        <hiprice>900.00</hiprice>
+        <avgprice>900.00</avgprice>
+        <lowprice>900.00</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Bayou&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Birds of Paradise</name>
+        <hiprice>889.98</hiprice>
+        <avgprice>889.98</avgprice>
+        <lowprice>850.00</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Birds of Paradise&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Badlands</name>
+        <hiprice>640.00</hiprice>
+        <avgprice>640.00</avgprice>
+        <lowprice>640.00</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Badlands&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>The Tabernacle at Pendrell Vale</name>
+        <hiprice>1000.00</hiprice>
+        <avgprice>721.99</avgprice>
+        <lowprice>599.99</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=The Tabernacle at Pendrell Vale&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Plateau</name>
+        <hiprice>550.00</hiprice>
+        <avgprice>550.00</avgprice>
+        <lowprice>550.00</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Plateau&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Mutavault</name>
+        <hiprice>745.19</hiprice>
+        <avgprice>641.99</avgprice>
+        <lowprice>545.99</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Mutavault&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Scrubland</name>
+        <hiprice>2495.00</hiprice>
+        <avgprice>2495.00</avgprice>
+        <lowprice>534.99</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Scrubland&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Taiga</name>
+        <hiprice>800.00</hiprice>
+        <avgprice>800.00</avgprice>
+        <lowprice>534.99</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Taiga&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Capture of Jingzhou</name>
+        <hiprice>534.63</hiprice>
+        <avgprice>499.37</avgprice>
+        <lowprice>489.95</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Capture of Jingzhou&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Dong Zhou, the Tyrant</name>
+        <hiprice>409.99</hiprice>
+        <avgprice>409.99</avgprice>
+        <lowprice>409.99</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Dong Zhou, the Tyrant&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Savannah</name>
+        <hiprice>1450.00</hiprice>
+        <avgprice>1450.00</avgprice>
+        <lowprice>400.00</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Savannah&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Ravages of War</name>
+        <hiprice>427.99</hiprice>
+        <avgprice>406.59</avgprice>
+        <lowprice>385.19</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Ravages of War&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Gaea's Cradle</name>
+        <hiprice>999.99</hiprice>
+        <avgprice>397.81</avgprice>
+        <lowprice>349.99</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Chains of Mephistopheles</name>
+        <hiprice>406.30</hiprice>
+        <avgprice>365.73</avgprice>
+        <lowprice>321.53</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Chains of Mephistopheles&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Forcefield</name>
+        <hiprice>614.99</hiprice>
+        <avgprice>614.99</avgprice>
+        <lowprice>320.99</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Forcefield&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Shivan Dragon</name>
+        <hiprice>319.98</hiprice>
+        <avgprice>319.98</avgprice>
+        <lowprice>319.98</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Shivan Dragon&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Armageddon</name>
+        <hiprice>300.00</hiprice>
+        <avgprice>300.00</avgprice>
+        <lowprice>300.00</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Armageddon&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Nevinyrral's Disk</name>
+        <hiprice>439.99</hiprice>
+        <avgprice>439.99</avgprice>
+        <lowprice>267.49</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Nevinyrral's Disk&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Zodiac Dragon</name>
+        <hiprice>262.49</hiprice>
+        <avgprice>262.49</avgprice>
+        <lowprice>262.49</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Zodiac Dragon&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Doran, the Siege Tower</name>
+        <hiprice>274.00</hiprice>
+        <avgprice>274.00</avgprice>
+        <lowprice>249.86</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Doran, the Siege Tower&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Imperial Recruiter</name>
+        <hiprice>268.48</hiprice>
+        <avgprice>268.48</avgprice>
+        <lowprice>240.74</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Imperial Recruiter&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Candelabra of Tawnos</name>
+        <hiprice>425.95</hiprice>
+        <avgprice>359.10</avgprice>
+        <lowprice>299.00</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Candelabra of Tawnos&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Elvish Archers</name>
+        <hiprice>267.27</hiprice>
+        <avgprice>267.27</avgprice>
+        <lowprice>225.00</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Elvish Archers&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Lord of Atlantis</name>
+        <hiprice>240.00</hiprice>
+        <avgprice>240.00</avgprice>
+        <lowprice>221.34</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Lord of Atlantis&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Wasteland</name>
+        <hiprice>287.49</hiprice>
+        <avgprice>287.49</avgprice>
+        <lowprice>217.79</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Wasteland&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Gauntlet of Might</name>
+        <hiprice>384.73</hiprice>
+        <avgprice>384.73</avgprice>
+        <lowprice>213.99</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Gauntlet of Might&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Winter Orb</name>
+        <hiprice>291.10</hiprice>
+        <avgprice>291.10</avgprice>
+        <lowprice>213.99</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Winter Orb&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Moat</name>
+        <hiprice>330.40</hiprice>
+        <avgprice>330.40</avgprice>
+        <lowprice>213.99</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Moat&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Island - Guru</name>
+        <hiprice>283.31</hiprice>
+        <avgprice>283.31</avgprice>
+        <lowprice>210.60</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Island - Guru&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Polluted Delta</name>
+        <hiprice>256.79</hiprice>
+        <avgprice>256.79</avgprice>
+        <lowprice>210.00</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Polluted Delta&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Word of Command</name>
+        <hiprice>279.99</hiprice>
+        <avgprice>279.99</avgprice>
+        <lowprice>208.21</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Word of Command&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Nightmare</name>
+        <hiprice>213.99</hiprice>
+        <avgprice>213.99</avgprice>
+        <lowprice>191.24</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Nightmare&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Illusionary Mask</name>
+        <hiprice>284.95</hiprice>
+        <avgprice>284.95</avgprice>
+        <lowprice>191.03</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Illusionary Mask&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Grim Tutor</name>
+        <hiprice>250.00</hiprice>
+        <avgprice>250.00</avgprice>
+        <lowprice>189.00</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Grim Tutor&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Wrath of God</name>
+        <hiprice>310.49</hiprice>
+        <avgprice>310.49</avgprice>
+        <lowprice>185.59</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Wrath of God&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Flooded Strand</name>
+        <hiprice>216.86</hiprice>
+        <avgprice>216.86</avgprice>
+        <lowprice>181.90</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Flooded Strand&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>The Abyss</name>
+        <hiprice>211.79</hiprice>
+        <avgprice>211.79</avgprice>
+        <lowprice>174.00</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=The Abyss&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Lightning Bolt</name>
+        <hiprice>235.50</hiprice>
+        <avgprice>235.50</avgprice>
+        <lowprice>171.59</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Lightning Bolt&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Karakas</name>
+        <hiprice>191.29</hiprice>
+        <avgprice>191.29</avgprice>
+        <lowprice>169.99</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Karakas&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Zombie Master</name>
+        <hiprice>195.25</hiprice>
+        <avgprice>195.25</avgprice>
+        <lowprice>169.48</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Zombie Master&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Wasteland</name>
+        <hiprice>219.40</hiprice>
+        <avgprice>219.40</avgprice>
+        <lowprice>160.40</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Wasteland&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Tarmogoyf</name>
+        <hiprice>202.45</hiprice>
+        <avgprice>202.45</avgprice>
+        <lowprice>159.99</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=MagicTarmogoyf&Name=&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Copy Artifact</name>
+        <hiprice>293.78</hiprice>
+        <avgprice>293.78</avgprice>
+        <lowprice>152.98</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Copy Artifact&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Dark Confidant</name>
+        <hiprice>180.00</hiprice>
+        <avgprice>180.00</avgprice>
+        <lowprice>152.24</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Dark Confidant&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Liliana of the Veil</name>
+        <hiprice>90.24</hiprice>
+        <avgprice>90.24</avgprice>
+        <lowprice>74.49</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Liliana of the Veil&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Bitterblossom</name>
+        <hiprice>74.99</hiprice>
+        <avgprice>74.99</avgprice>
+        <lowprice>68.00</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Bitterblossom&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Vendilion Clique</name>
+        <hiprice>73.21</hiprice>
+        <avgprice>73.21</avgprice>
+        <lowprice>61.72</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Vendilion Clique&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Noble Hierarch</name>
+        <hiprice>61.68</hiprice>
+        <avgprice>61.68</avgprice>
+        <lowprice>42.79</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Noble Hierarch&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Cryptic Command</name>
+        <hiprice>57.31</hiprice>
+        <avgprice>57.31</avgprice>
+        <lowprice>41.89</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Cryptic Command&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Snapcaster Mage</name>
+        <hiprice>51.59</hiprice>
+        <avgprice>51.59</avgprice>
+        <lowprice>41.00</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Snapcaster Mage&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Kozilek, Butcher of Truth</name>
+        <hiprice>50.60</hiprice>
+        <avgprice>50.60</avgprice>
+        <lowprice>37.49</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Kozilek, Butcher of Truth&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Sword of Fire and Ice</name>
+        <hiprice>47.31</hiprice>
+        <avgprice>37.02</avgprice>
+        <lowprice>37.02</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Sword of Fire and Ice&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Karn Liberated</name>
+        <hiprice>45.00</hiprice>
+        <avgprice>45.00</avgprice>
+        <lowprice>36.49</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Karn Liberated&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Scalding Tarn</name>
+        <hiprice>55.04</hiprice>
+        <avgprice>55.04</avgprice>
+        <lowprice>35.96</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Scalding Tarn&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Mox Opal</name>
+        <hiprice>48.49</hiprice>
+        <avgprice>48.49</avgprice>
+        <lowprice>32.52</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Mox Opal&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Sliver Legion</name>
+        <hiprice>46.99</hiprice>
+        <avgprice>46.99</avgprice>
+        <lowprice>32.09</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Sliver Legion&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Emrakul, the Aeons Torn</name>
+        <hiprice>44.79</hiprice>
+        <avgprice>44.79</avgprice>
+        <lowprice>32.09</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Emrakul, the Aeons Torn&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Fulminator Mage</name>
+        <hiprice>39.50</hiprice>
+        <avgprice>39.50</avgprice>
+        <lowprice>30.38</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Fulminator Mage&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Azusa, Lost but Seeking</name>
+        <hiprice>39.89</hiprice>
+        <avgprice>29.25</avgprice>
+        <lowprice>29.25</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Azusa, Lost but Seeking&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Damnation</name>
+        <hiprice>46.32</hiprice>
+        <avgprice>46.32</avgprice>
+        <lowprice>29.25</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Damnation&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Grove of the Burnwillows</name>
+        <hiprice>36.32</hiprice>
+        <avgprice>36.32</avgprice>
+        <lowprice>28.04</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Grove of the Burnwillows&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Crucible of Worlds</name>
+        <hiprice>31.77</hiprice>
+        <avgprice>31.77</avgprice>
+        <lowprice>28.00</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Crucible of Worlds&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Avacyn, Angel of Hope</name>
+        <hiprice>36.09</hiprice>
+        <avgprice>36.09</avgprice>
+        <lowprice>28.00</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Avacyn, Angel of Hope&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Ugin, the Spirit Dragon</name>
+        <hiprice>32.39</hiprice>
+        <avgprice>32.39</avgprice>
+        <lowprice>27.00</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Ugin, the Spirit Dragon&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Horizon Canopy</name>
+        <hiprice>35.07</hiprice>
+        <avgprice>35.07</avgprice>
+        <lowprice>26.88</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Horizon Canopy&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Linvala, Keeper of Silence</name>
+        <hiprice>37.45</hiprice>
+        <avgprice>26.74</avgprice>
+        <lowprice>26.74</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Linvala, Keeper of Silence&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Thoughtseize</name>
+        <hiprice>36.49</hiprice>
+        <avgprice>26.56</avgprice>
+        <lowprice>26.56</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Thoughtseize&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Elesh Norn, Grand Cenobite</name>
+        <hiprice>32.99</hiprice>
+        <avgprice>32.99</avgprice>
+        <lowprice>26.55</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Elesh Norn, Grand Cenobite&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Twilight Mire</name>
+        <hiprice>32.94</hiprice>
+        <avgprice>26.54</avgprice>
+        <lowprice>26.54</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Twilight Mire&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Ulamog, the Infinite Gyre</name>
+        <hiprice>36.13</hiprice>
+        <avgprice>36.13</avgprice>
+        <lowprice>26.13</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Ulamog, the Infinite Gyre&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Leyline of Sanctity</name>
+        <hiprice>31.47</hiprice>
+        <avgprice>31.47</avgprice>
+        <lowprice>24.84</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Leyline of Sanctity&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Narset Transcendent</name>
+        <hiprice>32.84</hiprice>
+        <avgprice>32.84</avgprice>
+        <lowprice>24.85</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Narset Transcendent&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Misty Rainforest</name>
+        <hiprice>34.21</hiprice>
+        <avgprice>34.21</avgprice>
+        <lowprice>24.81</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Misty Rainforest&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Doubling Season</name>
+        <hiprice>27.70</hiprice>
+        <avgprice>27.70</avgprice>
+        <lowprice>24.73</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Doubling Season&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Daybreak Coronet</name>
+        <hiprice>32.30</hiprice>
+        <avgprice>32.30</avgprice>
+        <lowprice>22.58</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Daybreak Coronet&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Splinter Twin</name>
+        <hiprice>26.69</hiprice>
+        <avgprice>26.69</avgprice>
+        <lowprice>22.47</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Splinter Twin&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Iona, Shield of Emeria</name>
+        <hiprice>27.93</hiprice>
+        <avgprice>27.93</avgprice>
+        <lowprice>22.00</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Iona, Shield of Emeria&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Verdant Catacombs</name>
+        <hiprice>33.23</hiprice>
+        <avgprice>33.23</avgprice>
+        <lowprice>22.00</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Verdant Catacombs&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Arid Mesa</name>
+        <hiprice>30.99</hiprice>
+        <avgprice>30.99</avgprice>
+        <lowprice>20.50</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Arid Mesa&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Wilt-Leaf Liege</name>
+        <hiprice>29.03</hiprice>
+        <avgprice>29.03</avgprice>
+        <lowprice>20.00</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Wilt-Leaf Liege&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Kiki-Jiki, Mirror Breaker</name>
+        <hiprice>25.26</hiprice>
+        <avgprice>25.26</avgprice>
+        <lowprice>19.41</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Kiki-Jiki, Mirror Breaker&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Phyrexian Obliterator</name>
+        <hiprice>25.81</hiprice>
+        <avgprice>25.81</avgprice>
+        <lowprice>19.25</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Phyrexian Obliterator&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Glimpse the Unthinkable</name>
+        <hiprice>24.61</hiprice>
+        <avgprice>24.61</avgprice>
+        <lowprice>19.19</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Glimpse the Unthinkable&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Pact of Negation</name>
+        <hiprice>21.50</hiprice>
+        <avgprice>21.50</avgprice>
+        <lowprice>18.69</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Pact of Negation&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Spellskite</name>
+        <hiprice>24.45</hiprice>
+        <avgprice>18.20</avgprice>
+        <lowprice>18.20</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Spellskite&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Blood Moon</name>
+        <hiprice>22.35</hiprice>
+        <avgprice>22.35</avgprice>
+        <lowprice>18.16</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Blood Moon&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Fetid Heath</name>
+        <hiprice>21.51</hiprice>
+        <avgprice>21.51</avgprice>
+        <lowprice>18.08</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Fetid Heath&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Cascade Bluffs</name>
+        <hiprice>21.59</hiprice>
+        <avgprice>21.59</avgprice>
+        <lowprice>17.60</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Cascade Bluffs&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Marsh Flats</name>
+        <hiprice>25.73</hiprice>
+        <avgprice>25.73</avgprice>
+        <lowprice>17.58</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspx?GameName=Magic&Name=Marsh Flats&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Dragonlord Ojutai</name>
+        <hiprice>19.85</hiprice>
+        <avgprice>15.99</avgprice>
+        <lowprice>15.99</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspxGameName=Magic&Name=Dragonlord Ojutai&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Nissa, Worldwaker</name>
+        <hiprice>19.00</hiprice>
+        <avgprice>19.00</avgprice>
+        <lowprice>14.30</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspxGameName=Magic&Name=Nissa, Worldwaker&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Brimaz, King of Oreskos</name>
+        <hiprice>20.05</hiprice>
+        <avgprice>20.05</avgprice>
+        <lowprice>14.00</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspxGameName=Magic&Name=Brimaz, King of Oreskos&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Deathmist Raptor</name>
+        <hiprice>17.91</hiprice>
+        <avgprice>17.91</avgprice>
+        <lowprice>14.00</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspxGameName=Magic&Name=Deathmist Raptor&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Dragonlord Atarka</name>
+        <hiprice>18.53</hiprice>
+        <avgprice>18.53</avgprice>
+        <lowprice>13.49</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspxGameName=Magic&Name=Dragonlord Atarka&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Stormbreath Dragon</name>
+        <hiprice>16.99</hiprice>
+        <avgprice>16.99</avgprice>
+        <lowprice>13.13</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspxGameName=Magic&Name=Stormbreath Dragon&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Monastery Mentor</name>
+        <hiprice>17.99</hiprice>
+        <avgprice>17.99</avgprice>
+        <lowprice>12.51</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspxGameName=Magic&Name=Monastery Mentor&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Sarkhan Unbroken</name>
+        <hiprice>16.92</hiprice>
+        <avgprice>16.92</avgprice>
+        <lowprice>12.50</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspxGameName=Magic&Name=Sarkhan Unbroken&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Flooded Strand</name>
+        <hiprice>13.70</hiprice>
+        <avgprice>13.70</avgprice>
+        <lowprice>11.32</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspxGameName=Magic&Name=Flooded Strand&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Ajani, Mentor of Heroes</name>
+        <hiprice>16.24</hiprice>
+        <avgprice>16.24</avgprice>
+        <lowprice>11.00</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspxGameName=Magic&Name=Ajani, Mentor of Heroes&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Polluted Delta</name>
+        <hiprice>13.68</hiprice>
+        <avgprice>13.68</avgprice>
+        <lowprice>11.00</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspxGameName=Magic&Name=&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Dragonlord Silumgar</name>
+        <hiprice>14.70</hiprice>
+        <avgprice>14.70</avgprice>
+        <lowprice>10.51</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspxGameName=Magic&Name=Dragonlord Silumgar&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Soulfire Grand Master</name>
+        <hiprice>13.00</hiprice>
+        <avgprice>10.00</avgprice>
+        <lowprice>10.00</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspxGameName=Magic&Name=Soulfire Grand Master&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Goblin Rabblemaster</name>
+        <hiprice>14.85</hiprice>
+        <avgprice>9.51</avgprice>
+        <lowprice>9.51</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspxGameName=Magic&Name=Goblin Rabblemaster&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Whisperwood Elemental</name>
+        <hiprice>13.99</hiprice>
+        <avgprice>13.99</avgprice>
+        <lowprice>9.25</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspxGameName=Magic&Name=Whisperwood Elemental&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Ashiok, Nightmare Weaver</name>
+        <hiprice>14.61</hiprice>
+        <avgprice>14.61</avgprice>
+        <lowprice>8.96</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspxGameName=Magic&Name=Ashiok, Nightmare Weaver&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Sorin, Solemn Visitor</name>
+        <hiprice>10.99</hiprice>
+        <avgprice>10.99</avgprice>
+        <lowprice>7.98</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspxGameName=Magic&Name=Sorin, Solemn Visitor&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Windswept Heath</name>
+        <hiprice>10.51</hiprice>
+        <avgprice>10.51</avgprice>
+        <lowprice>7.97</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspxGameName=Magic&Name=Windswept Heath&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Garruk, Apex Predator</name>
+        <hiprice>14.85</hiprice>
+        <avgprice>14.85</avgprice>
+        <lowprice>7.89</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspxGameName=Magic&Name=Garruk, Apex Predator&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Mana Confluence</name>
+        <hiprice>9.99</hiprice>
+        <avgprice>9.99</avgprice>
+        <lowprice>7.50</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspxGameName=Magic&Name=Mana Confluence&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Wooded Foothills</name>
+        <hiprice>9.99</hiprice>
+        <avgprice>9.99</avgprice>
+        <lowprice>7.50</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspxGameName=Magic&Name=Wooded Foothills&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Thunderbreak Regent</name>
+        <hiprice>10.80</hiprice>
+        <avgprice>10.80</avgprice>
+        <lowprice>7.15</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspxGameName=Magic&Name=Thunderbreak Regent&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Urborg, Tomb of Yawgmoth</name>
+        <hiprice>9.46</hiprice>
+        <avgprice>9.46</avgprice>
+        <lowprice>6.99</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspxGameName=Magic&Name=Urborg, Tomb of Yawgmoth&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Bloodstained Mire</name>
+        <hiprice>8.99</hiprice>
+        <avgprice>8.99</avgprice>
+        <lowprice>6.98</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspxGameName=Magic&Name=Bloodstained Mire&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Elspeth, Sun's Champion</name>
+        <hiprice>10.11</hiprice>
+        <avgprice>10.11</avgprice>
+        <lowprice>6.65</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspxGameName=Magic&Name=Elspeth, Sun's Champion&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Dromoka's Command</name>
+        <hiprice>9.21</hiprice>
+        <avgprice>9.21</avgprice>
+        <lowprice>6.62</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspxGameName=Magic&Name=Dromoka's Command&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Temple of Malady</name>
+        <hiprice>9.77</hiprice>
+        <avgprice>9.77</avgprice>
+        <lowprice>6.14</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspxGameName=Magic&Name=Temple of Malady&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Eidolon of the Great Revel</name>
+        <hiprice>8.00</hiprice>
+        <avgprice>8.00</avgprice>
+        <lowprice>6.00</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspxGameName=Magic&Name=Eidolon of the Great Revel&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Athreos, God of Passage</name>
+        <hiprice>9.99</hiprice>
+        <avgprice>9.99</avgprice>
+        <lowprice>6.00</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspxGameName=Magic&Name=Athreos, God of Passage&partner=TCGTEST]]>
+        </link>
+    </product>
+    <product>
+        <name>Thassa, God of the Sea</name>
+        <hiprice>8.00</hiprice>
+        <avgprice>8.00</avgprice>
+        <lowprice>5.89</lowprice>
+        <link>
+            <![CDATA[http://store.tcgplayer.com/Products.aspxGameName=Magic&Name=Thassa, God of the Sea&partner=TCGTEST]]>
+        </link>
+    </product>
 </products>

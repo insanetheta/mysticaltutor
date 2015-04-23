@@ -1,13 +1,16 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using System.Collections;
+using Object = UnityEngine.Object;
 
 public class ViewController : MonoBehaviour 
 {
     private static ViewController VC;
     private static Stack<Transform> Views;
+    private Transform AnchorRef;
 
     public static ViewController GetInstance()
     {
@@ -22,18 +25,30 @@ public class ViewController : MonoBehaviour
     {
         // Create The FrontPage
         Views = new Stack<Transform>();
-        Views.Push(anchorRef);
+        AnchorRef = anchorRef;
+        Views.Push(AnchorRef);
         GameObject FrontPage = Instantiate(Resources.Load<GameObject>("FrontPage/FrontPage")) as GameObject;
-        PushView(FrontPage.transform);
+        FrontPage.transform.parent = AnchorRef;
+        FrontPage.transform.localScale = new Vector3(1, 1, 1);
+        FrontPage.transform.localPosition = new Vector3(0, 0, 0);
+
+        Views.Push(FrontPage.transform);
         //GameObject FrontPage = Instantiate(Resources.Load<GameObject>("CardDetail/CardDetail")) as GameObject;
     }
 
-    public void PushView(Transform NewView)
+    public GameObject CreateView(string ViewLocation)
     {
-        NewView.parent = Views.Peek();
-        NewView.localScale = new Vector3(1, 1, 1);
-        NewView.localPosition = new Vector3(0, 0, 0);
+        PushView(Instantiate(Resources.Load<GameObject>(ViewLocation)) as GameObject);
+        return Views.Peek().gameObject;
+    }
 
-        Views.Push(NewView);
+    public void PushView(GameObject NewView)
+    {
+        Destroy(Views.Pop().gameObject);
+        NewView.transform.parent = AnchorRef;
+        NewView.transform.localScale = new Vector3(1, 1, 1);
+        NewView.transform.localPosition = new Vector3(0, 0, 0);
+
+        Views.Push(NewView.transform);
     }
 }

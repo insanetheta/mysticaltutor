@@ -10,22 +10,28 @@ public class CardDetailController : MonoBehaviour
     private UILabel Name;
     private UILabel HighMidLowPrices;
     private SpriteRenderer CardImage;
+    private bool Ready = false;
 
     void Start()
     {
         Name = transform.Find("Name").GetComponent<UILabel>();
         HighMidLowPrices = transform.Find("HighMidLowPrices").GetComponent<UILabel>();
         CardImage = transform.Find("Image").GetComponent<SpriteRenderer>();
-        Coroutainer();
+        Ready = true;
     }
 
-    void Coroutainer()
+    public void coLoadCard(TcgCard theCard)
     {
-        StartCoroutine(LoadCard(CardDataManager.GetInstance().Cards.First()));
+        StartCoroutine(LoadCard(theCard));
     }
 
-    public IEnumerator LoadCard(TcgCard theTcgCard)
+    private IEnumerator LoadCard(TcgCard theTcgCard)
     {
+        while (!Ready)
+        {
+            yield return null;
+        }
+
         Name.text = theTcgCard.Name;
         HighMidLowPrices.text = "$" + theTcgCard.HiPrice.ToString() + "\n" +
             "$" + theTcgCard.AvgPrice.ToString() + "\n" + 
@@ -40,7 +46,5 @@ public class CardDetailController : MonoBehaviour
         WWW www = new WWW(url);
         yield return www;
         CardImage.sprite = Sprite.Create(www.texture as Texture2D, new Rect(0, 0, www.texture.width, www.texture.height), new Vector2(.5f, .5f));
-
-        //www.LoadImageIntoTexture(CardImage);
     }
 }

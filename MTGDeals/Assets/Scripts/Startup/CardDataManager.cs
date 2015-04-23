@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DealFinder.Network.Models;
 
-class CardDataManager : MonoBehaviour
+internal class CardDataManager : MonoBehaviour
 {
     private static CardDataManager CDM;
 
@@ -27,9 +27,23 @@ class CardDataManager : MonoBehaviour
     public IEnumerator CardListRequest()
     {
         Transaction<List<TcgCard>> t = new Transaction<List<TcgCard>>();
-        //yield return StartCoroutine(t.HttpGetRequest("http://gbackdesigns.com/dealfinder/dealfinder/mobile/"));
-        yield return StartCoroutine(t.HttpGetRequest("http://127.0.0.1:8000/dealfinder/dealfinder/mobile/"));
-        
+        yield return StartCoroutine(t.HttpGetRequest("http://gbackdesigns.com/dealfinder/dealfinder/mobile/"));
+        //yield return StartCoroutine(t.HttpGetRequest("http://127.0.0.1:8000/dealfinder/dealfinder/mobile/"));
+
         Cards = t.GetResponse();
+    }
+
+    public TcgCard FindCardByText(string text)
+    {
+        foreach (TcgCard card in Cards)
+        {
+            Debug.Log(card.Name);
+            if (card.Name == text)
+            {
+                return card;
+            }
+        }
+        Debug.Log("SDLFKJIJSDOFIJSs");
+        return null;
     }
 }

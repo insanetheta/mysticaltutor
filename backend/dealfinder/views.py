@@ -30,9 +30,9 @@ def productDetail(request, product_id):
 	
 def mobileApi(request):
 	card_list = Card.objects.exclude(product=None).order_by('name')
-	return JsonResponse(getCardDictList(card_list), safe=False)
+	return JsonResponse(getCardProductDictList(card_list), safe=False)
 
-def getCardDictList(card_list):
+def getCardProductDictList(card_list):
 	card_dict_list = []
 	for card in card_list:
 		card_dict = {}
@@ -47,12 +47,31 @@ def getCardDictList(card_list):
 		card_dict_list.append(card_dict)
 	return card_dict_list
 
+def getCardDictList(card_list):
+	card_dict_list = []
+	for card in card_list:
+		card_dict = {}
+		card_dict['name'] = card.name
+		card_dict['multiverseId'] = card.multiverseId
+		card_dict['rarity'] = card.rarity
+		#card_dict['formats'] = card.formats
+		card_dict_list.append(card_dict)
+	return card_dict_list
+
 def formatFilterApi(request, format_name):
 	card_list = Card.objects.exclude(product=None).order_by('name')
 	card_list = filter(lambda x: formatFilter(x, format_name), card_list)
-	return JsonResponse(getCardDictList(card_list), safe=False)
+	return JsonResponse(getCardProductDictList(card_list), safe=False)
 
 def formatFilter(card, format_name):
 	print(format_name)
 	in_format = format_name in card.formats
 	return in_format
+
+def singleCardApi(request, card_name):
+	card_list = Card.objects.exclude(product=None).filter(name__iexact=card_name)
+	return JsonResponse(getCardProductDictList((card_list)), safe=False)
+
+def allCardsApi(request):
+	card_list = Card.objects.all()
+	return JsonResponse(getCardDictList(card_list), safe=False)

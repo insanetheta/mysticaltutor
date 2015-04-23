@@ -19,10 +19,9 @@ class Command(BaseCommand):
 		parser.add_argument('cardSetId', nargs='+', type=string)
 
 	def handle(self, *args, **options):
-		# print(args[0])
 		allCardsOutputString = open(os.path.join(PROJECT_ROOT, '../../jsoncarddata/AllSets-x.json')).read()
 		setsDict = json.loads(allCardsOutputString)
-		# print(cardsDict)
+
 		cardUpdatedCount = 0
 		setUpdatedCount = 0
 		for setKey in setsDict:
@@ -36,9 +35,7 @@ class Command(BaseCommand):
 			except CardSet.DoesNotExist:
 				set = CardSet.create(setDict)
 				set.save()
-			print(set)
-
-			#print(setsDict[setKey]['name'])
+			print(set.name)
 
 			for cardDict in setDict['cards']:
 				cardUpdatedCount += 1

@@ -31,7 +31,6 @@ public class CardDetailController : MonoBehaviour
         {
             yield return null;
         }
-
         Name.text = theTcgCard.Name;
         HighMidLowPrices.text = "$" + theTcgCard.HiPrice.ToString() + "\n" +
             "$" + theTcgCard.AvgPrice.ToString() + "\n" + 

@@ -10,6 +10,8 @@ public class FrontPageController : MonoBehaviour
     private Transform GridRef;
     public List<CardObject> CardHistory = new List<CardObject>();
 
+
+
     void Start()
     {
         GridRef = transform.FindChild("Grid");

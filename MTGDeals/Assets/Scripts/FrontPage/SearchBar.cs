@@ -40,7 +40,7 @@ public class SearchBar : MonoBehaviour
             
             CardToSearchFor.text += Input.inputString;
 
-            if (Input.GetKeyDown(KeyCode.Backspace))
+            if (Input.GetKeyDown(KeyCode.Delete))
             {
                 CardToSearchFor.text = "";
             }

@@ -21,8 +21,8 @@ class Product(models.Model):
 	@classmethod
 	def create(cls, jsonProductObject):
 		product = cls()
-		product.productName = "Name"
-		product.tcgId = jsonProductObject['id']
+		product.productName = jsonProductObject['name']
+		product.tcgId = jsonProductObject.get('id', -1)
 		product.hiPrice = jsonProductObject['hiprice']
 		product.avgPrice = jsonProductObject['avgprice']
 		product.lowPrice = jsonProductObject['lowprice']
@@ -30,7 +30,7 @@ class Product(models.Model):
 		return product
 		
 class CardSet(models.Model):
-	setCode = models.CharField(default='none', max_length=200)
+	setCode = models.CharField(default='none', max_length=200, unique=True)
 	gathererCode = models.CharField(default='none', max_length=200)
 	name = models.CharField(default='none', max_length=200)
 	type = models.CharField(default='none', max_length=200)
@@ -68,7 +68,7 @@ class CardSet(models.Model):
 		return cardSet
 		
 class Card(models.Model):
-	multiverseId = models.CharField(default='none', max_length=200)
+	multiverseId = models.CharField(default='none', max_length=200, unique=True)
 	name = models.CharField(default='none', max_length=200)
 	colors = models.CharField(default='', max_length=200) #array of str
 	rarity = models.CharField(default='none', max_length=200)
@@ -90,7 +90,7 @@ class Card(models.Model):
 		card.multiverseId = jsonCardObject.get('multiverseid', '-1')
 		card.name = jsonCardObject['name']
 		card.colors = str(jsonCardObject.get('colors', '')).strip('[]')
-		print(str(card.colors))
+		#print(str(card.colors))
 		card.rarity = jsonCardObject['rarity']
 		legalities = jsonCardObject.get('legalities','')
 		formats = []

@@ -8,7 +8,7 @@ class ProductAdmin(admin.ModelAdmin):
 		# (None, {'fields': ['productName']}),
 	# ]
 
-	list_display = ('productName', 'tcgId')
+	list_display = ('productName', 'lowPrice')
 
 class CardSetAdmin(admin.ModelAdmin):
 	list_display = ('name', 'setCode')

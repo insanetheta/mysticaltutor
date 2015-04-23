@@ -24,8 +24,9 @@ class Command(BaseCommand):
             # self.stdout.write('Successfully closed product "%s"' % poll_id)
 		prodList = productFetcher.parseProductXmlAndStore()
 		for product in prodList:
+			print(product.productName)
 			try:
-				existingProduct = Product.objects.get(tcgId=product.tcgId)
+				existingProduct = Product.objects.get(productName=product.productName)
 				existingProduct.updateFieldsFromProduct(product)
 				existingProduct.clean()
 				existingProduct.save()

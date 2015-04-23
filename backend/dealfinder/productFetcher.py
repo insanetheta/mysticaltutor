@@ -12,12 +12,12 @@ def parseProductXmlAndStore():
 	tcgOutputString = tcgOutputFile.read();
 	#print(tcgOutputString)
 	tcgXml = ET.fromstring(tcgOutputString)
-	print tcgXml
+	#print tcgXml
 	tcgDictList = []
 	for child in tcgXml:
-		print child
+		#print child
 		tcgDictList.append(xmldict.xml_to_dict(child))
-	print tcgDictList[1]
+	#print tcgDictList[1]
 	# tcgOutputDict = xmldict.xml_to_dict(tcgOutputString)
 	# print(tcgOutputDict)
 	# productArray = tcgOutputDict['products']['product']
@@ -28,7 +28,7 @@ def parseProductXmlAndStore():
 	for tcgDict in tcgDictList:
 		prod = Product.create(tcgDict['product'])
 		productList.append(prod)
-	print productList[0].tcgId
+	#print productList[0].tcgId
 	return productList
 	
 	

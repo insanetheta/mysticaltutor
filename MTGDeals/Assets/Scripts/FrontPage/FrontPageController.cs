@@ -66,6 +66,7 @@ public class FrontPageController : MonoBehaviour
 
         newGO.name = "000" + 0;
         newGO.transform.parent = GridRef;
+		newGO.GetComponent<FrontPageButton>().TheCardRef = newCard;
         newGO.transform.Find("Label").localScale = new Vector3(24, 24, 1);
         newGO.transform.Find("Label").GetComponent<UILabel>().text = newCard.Name + " " + newCard.AvgPrice;
         newGO.transform.localScale = new Vector3(1, 1, 1);

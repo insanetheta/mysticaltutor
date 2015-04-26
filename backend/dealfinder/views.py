@@ -54,9 +54,21 @@ def getCardDictList(card_list):
 		card_dict['name'] = card.name
 		card_dict['multiverseId'] = card.multiverseId
 		card_dict['rarity'] = card.rarity
+		card_formats = filter(lambda x: isRelevantFormat(x), card.formats)
+		card_dict['formats'] = str(card_formats).strip('[]')
 		#card_dict['formats'] = card.formats
 		card_dict_list.append(card_dict)
 	return card_dict_list
+
+def isRelevantFormat(format):
+	if format.lower() == 'standard'.lower():
+		return True
+	if format.lower() == 'modern'.lower():
+		return True
+	if format.lower() == 'legacy'.lower():
+		return True
+	return False
+
 
 def formatFilterApi(request, format_name):
 	card_list = Card.objects.exclude(product=None).order_by('name')

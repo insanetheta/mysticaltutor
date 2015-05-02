@@ -1,3 +1,6 @@
+using System;
+using System.Globalization;
+using System.Linq;
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
@@ -16,25 +19,20 @@ internal class CardDataManager : MonoBehaviour
         return CDM;
     }
 
-    public List<TcgCard> Cards;
-
-    public void Initialize(List<TcgCard> cards)
-    {
-        Cards = cards;
-    }
+    private List<TcgCard> CardsAll;
 
     public IEnumerator CardListRequest()
     {
         Transaction<List<TcgCard>> t = new Transaction<List<TcgCard>>();
         yield return StartCoroutine(t.HttpGetRequest("http://gbackdesigns.com/dealfinder/dealfinder/mobile/"));
         //yield return StartCoroutine(t.HttpGetRequest("http://127.0.0.1:8000/dealfinder/dealfinder/mobile/"));
-
-        Cards = t.GetResponse();
+        CardsAll = t.GetResponse();
+        yield return null;
     }
 
     public TcgCard FindCardByText(string text)
     {
-        foreach (TcgCard card in Cards)
+        foreach (TcgCard card in CardsAll)
         {
             Debug.Log(card.Name);
             if (card.Name == text)
@@ -44,5 +42,42 @@ internal class CardDataManager : MonoBehaviour
         }
         Debug.Log("SDLFKJIJSDOFIJSs");
         return null;
+    }
+
+    private FormatFilters currentFormatFilter;
+
+    private int currentMoneyFilter;
+
+    private static readonly Dictionary<int, FormatFilters> FormatFilterMap = new Dictionary<int, FormatFilters>()
+    {
+        {0, FormatFilters.None},
+        {1, FormatFilters.Standard},
+        {2, FormatFilters.Modern},
+        {3, FormatFilters.Legacy}
+    };
+
+    public List<TcgCard> FilteredCards()
+    {
+        List<TcgCard> filteredCards = CardsAll;
+        currentFormatFilter = FormatFilterMap[PlayerPrefs.GetInt("FormatFilter", 0)];
+        currentMoneyFilter = PlayerPrefs.GetInt("MoneyFilter", 0);
+        CultureInfo englishLang = CultureInfo.InvariantCulture;
+
+        filteredCards = filteredCards.Where(card => 
+            card.LowPrice <= currentMoneyFilter &&
+            card.Formats.Any
+                (format => 
+                    format.IndexOf(currentFormatFilter.ToString(), StringComparison.OrdinalIgnoreCase) >= 0)
+                ).ToList();
+
+        return filteredCards;
+    }
+
+    enum FormatFilters
+    {
+        None,
+        Standard,
+        Modern,
+        Legacy
     }
 }

@@ -14,12 +14,20 @@ public class FrontPageController : MonoBehaviour
     {
         GridRef = transform.FindChild("Grid");
         
-        foreach (TcgCard card in CardDataManager.GetInstance().Cards)
+        foreach (TcgCard card in CardDataManager.GetInstance().FilteredCards())
         {
             InstantiateNewCard(card);
         }
 
-        SortByPrice();
+        if (PlayerPrefs.GetInt("SortBy", 0) == 0)
+        {
+            SortByDollarRatio();
+        }
+        else
+        {
+            SortByPercentageRatio();
+        }
+
         CreateList();
     }
 
@@ -72,10 +80,19 @@ public class FrontPageController : MonoBehaviour
         newGO.transform.localScale = new Vector3(1, 1, 1);
     }
 
-    void SortByPrice()
+    /// <summary>
+    /// Sort algorithms
+    /// </summary>
+    void SortByDollarRatio()
     {
-        CardHistory.Sort((CardObject node1, CardObject node2) => node1.TheCard.AvgPrice.CompareTo(node2.TheCard.AvgPrice));
-        CardHistory.Reverse();
+        CardHistory.Sort((CardObject node1, CardObject node2) => (node2.TheCard.AvgPrice - node2.TheCard.LowPrice)
+            .CompareTo(node1.TheCard.AvgPrice - node1.TheCard.LowPrice));
+    }
+
+    void SortByPercentageRatio()
+    {
+        CardHistory.Sort((CardObject node1, CardObject node2) => (node2.TheCard.LowPrice / node2.TheCard.AvgPrice)
+            .CompareTo(node1.TheCard.LowPrice / node1.TheCard.AvgPrice));
     }
 }
 

@@ -31,17 +31,8 @@ namespace DealFinder.Network.Models
         [JsonProperty]
         public string Rarity { get; private set; }
         
-        //[JsonProperty]
-        //public List<Format> Formats { get; private set; }
-    }
-
-    public class Format
-    {
         [JsonProperty]
-        public string Name { get; private set; }
-        
-        [JsonProperty]
-        public string Legality { get; private set; } 
+        public List<string> Formats { get; private set; }
     }
 }
 

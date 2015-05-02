@@ -39,7 +39,13 @@ def getCardProductDictList(card_list):
 		card_dict['name'] = card.name
 		card_dict['multiverseId'] = card.multiverseId
 		card_dict['rarity'] = card.rarity
-		card_dict['formats'] = card.formats
+		mtgFormats = []
+		for mtgFormat in card.formats.split(","):
+			mtgFormats.append(mtgFormat.strip("'" '"' ' '))
+		mtgFormats = filter(isRelevantFormat, mtgFormats)
+		#formats.append(card.formats[0])
+		card_dict['formats'] = mtgFormats
+		#card_dict['formats'] = filter(lambda x: isRelevantFormat(x), card.formats)
 		card_dict['hiPrice'] = card.product.hiPrice
 		card_dict['lowPrice'] = card.product.lowPrice
 		card_dict['avgPrice'] = card.product.avgPrice
@@ -54,8 +60,13 @@ def getCardDictList(card_list):
 		card_dict['name'] = card.name
 		card_dict['multiverseId'] = card.multiverseId
 		card_dict['rarity'] = card.rarity
-		card_formats = filter(lambda x: isRelevantFormat(x), card.formats)
-		card_dict['formats'] = str(card_formats).strip('[]')
+		formats = []
+		#for format in card.formats:
+		#	formats.append(format)
+		#formats = filter(lambda x: isRelevantFormat(x), card.formats)
+		#formats.append(card.formats[0])
+		card_formats = formats
+		card_dict['formats'] = card_formats#str(card_formats).strip('[]')
 		#card_dict['formats'] = card.formats
 		card_dict_list.append(card_dict)
 	return card_dict_list

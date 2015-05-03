@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class StandardButton : MonoBehaviour
+public class ThirtyButton : MonoBehaviour
 {
     public UISprite BackgroundColor;
     public event FrontPageController.ButtonClickAction Clicked;
@@ -13,13 +13,13 @@ public class StandardButton : MonoBehaviour
 
     void OnClick()
     {
-        if (CardDataManager.GetInstance().currentFormatFilter != CardDataManager.FormatFilters.Standard)
+        if (CardDataManager.GetInstance().currentMoneyFilter != 30)
         {
-            CardDataManager.GetInstance().ChangeFormatFilter(CardDataManager.FormatFilters.Standard);            
+            CardDataManager.GetInstance().ChangeMoneyFilter(30);
         }
         else
         {
-            CardDataManager.GetInstance().ChangeFormatFilter(CardDataManager.FormatFilters.None);            
+            CardDataManager.GetInstance().ChangeFormatFilter(0);
         }
         Clicked.Invoke();
     }

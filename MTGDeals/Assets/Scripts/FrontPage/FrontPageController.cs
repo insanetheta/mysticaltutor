@@ -1,3 +1,4 @@
+using System;
 using System.Globalization;
 using System.Linq;
 using DealFinder.Network.Models;
@@ -9,6 +10,13 @@ public class FrontPageController : MonoBehaviour
 {
     private Transform GridRef;
     public List<CardObject> CardHistory = new List<CardObject>();
+
+    private Transform StandardFilterButton,
+        ModernFilterButton,
+        LegacyFilterButton,
+        TenButton,
+        ThirtyButton,
+        ThirtyPlusButton;
 
     void Start()
     {
@@ -29,6 +37,72 @@ public class FrontPageController : MonoBehaviour
         }
 
         CreateList();
+        OnFormatClicked += FormatButtonsUpdate;
+        OnMoneyClicked += MoneyButtonsUpdate;
+
+        StandardFilterButton = transform.Find("FrontPageButtons/StandardFilter");
+        StandardFilterButton.GetComponent<StandardButton>().Clicked += OnFormatClicked;
+
+        ModernFilterButton = transform.Find("FrontPageButtons/ModernFilter");
+        ModernFilterButton.GetComponent<FilterButton>().Clicked += OnFormatClicked;
+
+        LegacyFilterButton = transform.Find("FrontPageButtons/LegacyFilter");
+        LegacyFilterButton.GetComponent<FilterButton>().Clicked += OnFormatClicked;
+
+        TenButton = transform.Find("FrontPageButtons/0-10");
+        TenButton.GetComponent<FilterButton>().Clicked += OnMoneyClicked;
+
+        ThirtyButton = transform.Find("FrontPageButtons/10-30");
+        ThirtyButton.GetComponent<FilterButton>().Clicked += OnMoneyClicked;
+
+        ThirtyPlusButton = transform.Find("FrontPageButtons/30+");
+        ThirtyPlusButton.GetComponent<FilterButton>().Clicked += OnMoneyClicked;
+    }
+
+    public delegate void ButtonClickAction();
+    public static event ButtonClickAction OnFormatClicked;
+    public static event ButtonClickAction OnMoneyClicked;
+    
+    void FormatButtonsUpdate()
+    {
+        Debug.Log("BLEF");
+        StandardFilterButton.GetComponent<FilterButton>().BackgroundColor.color = new Color(1f, 1f, 1f);
+        ModernFilterButton.GetComponent<FilterButton>().BackgroundColor.color = new Color(1f, 1f, 1f);
+        LegacyFilterButton.GetComponent<FilterButton>().BackgroundColor.color = new Color(1f, 1f, 1f);
+
+        if (PlayerPrefs.GetInt("FormatFilter") == 1)
+        {
+            StandardFilterButton.GetComponent<FilterButton>().BackgroundColor.color = new Color(0f, 0f, 0f);            
+        }
+        else if (PlayerPrefs.GetInt("FormatFilter") == 1)
+        {
+            ModernFilterButton.GetComponent<FilterButton>().BackgroundColor.color = new Color(0f, 0f, 0f);            
+        }
+        else if (PlayerPrefs.GetInt("FormatFilter") == 1)
+        {
+            LegacyFilterButton.GetComponent<FilterButton>().BackgroundColor.color = new Color(0f, 0f, 0f);            
+        }
+    }
+
+    void MoneyButtonsUpdate()
+    {
+        Debug.Log("BLORF");
+        TenButton.GetComponent<FilterButton>().BackgroundColor.color = new Color(1f, 1f, 1f);
+        ThirtyButton.GetComponent<FilterButton>().BackgroundColor.color = new Color(1f, 1f, 1f);
+        ThirtyPlusButton.GetComponent<FilterButton>().BackgroundColor.color = new Color(1f, 1f, 1f);
+
+        if (PlayerPrefs.GetInt("MoneyFilter") <= 10)
+        {
+            TenButton.GetComponent<FilterButton>().BackgroundColor.color = new Color(0f, 0f, 0f);
+        }
+        else if (PlayerPrefs.GetInt("MoneyFilter") <= 30)
+        {
+            ThirtyButton.GetComponent<FilterButton>().BackgroundColor.color = new Color(0f, 0f, 0f);
+        }
+        else if (PlayerPrefs.GetInt("MoneyFilter") > 30)
+        {
+            ThirtyPlusButton.GetComponent<FilterButton>().BackgroundColor.color = new Color(0f, 0f, 0f);
+        }
     }
 
     void CreateList()

@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class StandardButton : MonoBehaviour
+public class ModernButton : MonoBehaviour
 {
     public UISprite BackgroundColor;
     public event FrontPageController.ButtonClickAction Clicked;
@@ -13,13 +13,13 @@ public class StandardButton : MonoBehaviour
 
     void OnClick()
     {
-        if (CardDataManager.GetInstance().currentFormatFilter != CardDataManager.FormatFilters.Standard)
+        if (CardDataManager.GetInstance().currentFormatFilter != CardDataManager.FormatFilters.Modern)
         {
-            CardDataManager.GetInstance().ChangeFormatFilter(CardDataManager.FormatFilters.Standard);            
+            CardDataManager.GetInstance().ChangeFormatFilter(CardDataManager.FormatFilters.Modern);
         }
         else
         {
-            CardDataManager.GetInstance().ChangeFormatFilter(CardDataManager.FormatFilters.None);            
+            CardDataManager.GetInstance().ChangeFormatFilter(CardDataManager.FormatFilters.None);
         }
         Clicked.Invoke();
     }

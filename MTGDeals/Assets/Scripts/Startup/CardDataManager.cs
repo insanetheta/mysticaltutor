@@ -45,9 +45,9 @@ internal class CardDataManager : MonoBehaviour
         return null;
     }
 
-    private FormatFilters currentFormatFilter;
+    public FormatFilters currentFormatFilter;
 
-    private int currentMoneyFilter;
+    public int currentMoneyFilter;
 
     private static readonly Dictionary<int, FormatFilters> FormatFilterMap = new Dictionary<int, FormatFilters>()
     {
@@ -56,6 +56,18 @@ internal class CardDataManager : MonoBehaviour
         {2, FormatFilters.Modern},
         {3, FormatFilters.Legacy}
     };
+
+    public void ChangeFormatFilter(FormatFilters target)
+    {
+        currentFormatFilter = target;
+        PlayerPrefs.SetInt("FormatFilter", (int)target);
+    }
+
+    public void ChangeMoneyFilter(int target)
+    {
+        currentMoneyFilter = target;
+        PlayerPrefs.SetInt("MoneyFilter", currentMoneyFilter);
+    }
 
     public List<TcgCard> FilteredCards()
     {
@@ -74,7 +86,7 @@ internal class CardDataManager : MonoBehaviour
         return filteredCards;
     }
 
-    enum FormatFilters
+    public enum FormatFilters
     {
         None,
         Standard,

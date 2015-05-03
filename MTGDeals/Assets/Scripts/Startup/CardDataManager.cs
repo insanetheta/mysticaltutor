@@ -24,9 +24,10 @@ internal class CardDataManager : MonoBehaviour
     public IEnumerator CardListRequest()
     {
         Transaction<List<TcgCard>> t = new Transaction<List<TcgCard>>();
-        yield return StartCoroutine(t.HttpGetRequest("http://gbackdesigns.com/dealfinder/dealfinder/mobile/"));
-        //yield return StartCoroutine(t.HttpGetRequest("http://127.0.0.1:8000/dealfinder/dealfinder/mobile/"));
+        yield return StartCoroutine(t.HttpGetRequest("http://gbackdesigns.com/dealfinder/mobile/api"));
+        //yield return StartCoroutine(t.HttpGetRequest("http://127.0.0.1:8000/dealfinder/mobile/api"));
         CardsAll = t.GetResponse();
+        Debug.Log(CardsAll.Count);
         yield return null;
     }
 

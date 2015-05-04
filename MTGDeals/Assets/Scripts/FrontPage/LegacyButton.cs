@@ -3,12 +3,12 @@ using System.Collections;
 
 public class LegacyButton : MonoBehaviour
 {
-    public UISprite BackgroundColor;
+    public UIButton BackgroundColor;
     public event FrontPageController.ButtonClickAction Clicked;
 
     void Start()
     {
-        BackgroundColor = transform.Find("Background").GetComponent<UISprite>();
+        BackgroundColor = transform.GetComponent<UIButton>();
     }
 
     void OnClick()

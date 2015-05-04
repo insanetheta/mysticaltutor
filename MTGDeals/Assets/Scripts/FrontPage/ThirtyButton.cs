@@ -3,12 +3,12 @@ using System.Collections;
 
 public class ThirtyButton : MonoBehaviour
 {
-    public UISprite BackgroundColor;
+    public UIButton BackgroundColor;
     public event FrontPageController.ButtonClickAction Clicked;
 
     void Start()
     {
-        BackgroundColor = transform.Find("Background").GetComponent<UISprite>();
+        BackgroundColor = transform.GetComponent<UIButton>();
     }
 
     void OnClick()
@@ -19,7 +19,7 @@ public class ThirtyButton : MonoBehaviour
         }
         else
         {
-            CardDataManager.GetInstance().ChangeFormatFilter(0);
+            CardDataManager.GetInstance().ChangeMoneyFilter(0);
         }
         Clicked.Invoke();
     }

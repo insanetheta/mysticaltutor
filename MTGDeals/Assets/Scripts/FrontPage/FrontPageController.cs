@@ -118,7 +118,7 @@ public class FrontPageController : MonoBehaviour
             Destroy(go.gameObject);
         }
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(.01f);
 
         CardHistory = new List<CardObject>();
 

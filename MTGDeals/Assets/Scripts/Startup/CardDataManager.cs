@@ -27,7 +27,7 @@ internal class CardDataManager : MonoBehaviour
         yield return StartCoroutine(t.HttpGetRequest("http://gbackdesigns.com/dealfinder/mobile/api"));
         //yield return StartCoroutine(t.HttpGetRequest("http://127.0.0.1:8000/dealfinder/mobile/api"));
         CardsAll = t.GetResponse();
-        Debug.Log(CardsAll.Count);
+        //Debug.Log(CardsAll.Count);
         yield return null;
     }
 
@@ -76,13 +76,16 @@ internal class CardDataManager : MonoBehaviour
         currentMoneyFilter = PlayerPrefs.GetInt("MoneyFilter", 0);
         CultureInfo englishLang = CultureInfo.InvariantCulture;
 
-        filteredCards = filteredCards.Where(card => 
-            card.LowPrice <= currentMoneyFilter &&
+        filteredCards = filteredCards.Where(card =>
+            (card.LowPrice <= currentMoneyFilter || 
+            currentMoneyFilter == 0) &&
+            (currentFormatFilter == FormatFilters.None ||
             card.Formats.Any
                 (format => 
-                    format.IndexOf(currentFormatFilter.ToString(), StringComparison.OrdinalIgnoreCase) >= 0)
+                    format.IndexOf(currentFormatFilter.ToString(), StringComparison.OrdinalIgnoreCase) >= 0))
                 ).ToList();
-
+        filteredCards.Sort((TcgCard x, TcgCard y) => (y.AvgPrice - y.LowPrice).CompareTo(x.AvgPrice - x.LowPrice));
+        Debug.Log(filteredCards.Count);
         return filteredCards;
     }
 

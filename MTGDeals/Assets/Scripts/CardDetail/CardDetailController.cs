@@ -10,12 +10,14 @@ public class CardDetailController : MonoBehaviour
     private UILabel HighMidLowPrices;
     private SpriteRenderer CardImage;
     private bool Ready = false;
+	private BuyButton BuyButtonRef;
 
     void Start()
     {
         Name = transform.Find("Name").GetComponent<UILabel>();
         HighMidLowPrices = transform.Find("HighMidLowPrices").GetComponent<UILabel>();
         CardImage = transform.Find("Image").GetComponent<SpriteRenderer>();
+		BuyButtonRef = transform.Find("BuyButton").GetComponent<BuyButton>();
         Ready = true;
     }
 
@@ -30,6 +32,11 @@ public class CardDetailController : MonoBehaviour
         {
             yield return null;
         }
+		//string setName = theTcgCard.CardSetName.Replace(" ", "-");
+		string cardName = theTcgCard.Name.Replace(" ", "-");
+
+		//Debug.Log("http://shop.tcgplayer.com/magic/" + setName + "/" + cardName);
+		//BuyButtonRef.CardUrl = "http://shop.tcgplayer.com/magic/" + setName + "/" + cardName;
         Name.text = theTcgCard.Name;
         HighMidLowPrices.text = "$" + theTcgCard.HiPrice.ToString() + "\n" +
             "$" + theTcgCard.AvgPrice.ToString() + "\n" + 

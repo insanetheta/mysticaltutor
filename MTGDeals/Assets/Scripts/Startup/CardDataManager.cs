@@ -84,7 +84,6 @@ internal class CardDataManager : MonoBehaviour
                 (format => 
                     format.IndexOf(currentFormatFilter.ToString(), StringComparison.OrdinalIgnoreCase) >= 0))
                 ).ToList();
-        filteredCards.Sort((TcgCard x, TcgCard y) => (y.AvgPrice - y.LowPrice).CompareTo(x.AvgPrice - x.LowPrice));
         Debug.Log(filteredCards.Count);
         return filteredCards;
     }

@@ -10,6 +10,7 @@ using System.Collections.Generic;
 public class FrontPageController : MonoBehaviour
 {
     private Transform GridRef;
+    private UIDraggablePanel ScrollingTextPanel;
     public List<CardObject> CardHistory = new List<CardObject>();
 
     private StandardButton StandardFilterButton;
@@ -22,7 +23,7 @@ public class FrontPageController : MonoBehaviour
     void Start()
     {
         GridRef = transform.FindChild("ScrollingText/Grid");
-
+        ScrollingTextPanel = transform.Find("ScrollingText").GetComponent<UIDraggablePanel>();
         OnFormatClicked = FormatButtonsUpdate;
         OnMoneyClicked = MoneyButtonsUpdate;
         StartCoroutine(Initialize());
@@ -121,51 +122,26 @@ public class FrontPageController : MonoBehaviour
         yield return new WaitForSeconds(.01f);
 
         CardHistory = new List<CardObject>();
-
-        foreach (TcgCard card in CardDataManager.GetInstance().FilteredCards())
-        {
-            InstantiateNewCard(card);
-        }
+        List<TcgCard> filteredCards = CardDataManager.GetInstance().FilteredCards();
 
         if (PlayerPrefs.GetInt("SortBy", 0) == 0)
         {
-            SortByDollarRatio();
+            SortByDollarRatio(filteredCards);
         }
         else
         {
-            SortByPercentageRatio();
+            SortByPercentageRatio(filteredCards);
         }
 
-        int count = 0;
-        foreach (CardObject x in CardHistory)
+        for (int i = 0; i < filteredCards.Count; i++)
         {
-            count++;
-            x.Position = count;
-            if (x.Position >= 10)
-            {
-                x.GO.name = "00" + x.Position;
-            }
-            else if (x.Position >= 100)
-            {
-                x.GO.name = "0" + x.Position;
-            }
-            else if (x.Position >= 1000)
-            {
-                x.GO.name = x.Position.ToString();
-            }
-            else if (x.Position >= 10000)
-            {
-                CardHistory.Remove(x);
-            }
-            else
-            {
-                x.GO.name = "000" + x.Position;
-            }
+            InstantiateNewCard(filteredCards[i], i);
         }
+        //ScrollingTextPanel.ResetPosition();
         GridRef.GetComponent<UIGrid>().repositionNow = true;
     }
 
-    public void InstantiateNewCard(TcgCard newCard)
+    public void InstantiateNewCard(TcgCard newCard, int sortOrder)
     {
         GameObject newGO = Instantiate(Resources.Load<GameObject>("FrontPage/Item")) as GameObject;
 
@@ -173,7 +149,7 @@ public class FrontPageController : MonoBehaviour
 
         CardHistory.Add(tmp);
 
-        newGO.name = "000" + 0;
+        newGO.name = sortOrder.ToString();
         newGO.transform.parent = GridRef;
 		newGO.GetComponent<FrontPageButton>().TheCardRef = newCard;
         newGO.transform.Find("Name").GetComponent<UILabel>().text = newCard.Name;
@@ -186,16 +162,16 @@ public class FrontPageController : MonoBehaviour
     /// <summary>
     /// Sort algorithms
     /// </summary>
-    void SortByDollarRatio()
+    void SortByDollarRatio(List<TcgCard> cards)
     {
-        CardHistory.Sort((CardObject node1, CardObject node2) => (node2.TheCard.AvgPrice - node2.TheCard.LowPrice)
-            .CompareTo(node1.TheCard.AvgPrice - node1.TheCard.LowPrice));
+        cards.Sort((TcgCard node1, TcgCard node2) => (node2.AvgPrice - node2.LowPrice)
+            .CompareTo(node1.AvgPrice - node1.LowPrice));
     }
 
-    void SortByPercentageRatio()
+    void SortByPercentageRatio(List<TcgCard> cards)
     {
-        CardHistory.Sort((CardObject node1, CardObject node2) => (node2.TheCard.LowPrice / node2.TheCard.AvgPrice)
-            .CompareTo(node1.TheCard.LowPrice / node1.TheCard.AvgPrice));
+        cards.Sort((TcgCard node1, TcgCard node2) => (node2.LowPrice / node2.AvgPrice)
+            .CompareTo(node1.LowPrice / node1.AvgPrice));
     }
 }
 

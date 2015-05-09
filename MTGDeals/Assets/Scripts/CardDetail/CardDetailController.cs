@@ -11,12 +11,20 @@ public class CardDetailController : MonoBehaviour
     private SpriteRenderer CardImage;
     private bool Ready = false;
 
+    private TcgCard cardModel;
+
     void Start()
     {
         Name = transform.Find("Name").GetComponent<UILabel>();
         HighMidLowPrices = transform.Find("HighMidLowPrices").GetComponent<UILabel>();
         CardImage = transform.Find("Image").GetComponent<SpriteRenderer>();
         Ready = true;
+        transform.Find("BuyButton").GetComponent<EventButton>().ButtonPressed += BuyCard;
+    }
+
+    private void BuyCard()
+    {
+        Application.OpenURL(cardModel.Link);
     }
 
     public void coLoadCard(TcgCard theCard)
@@ -26,6 +34,7 @@ public class CardDetailController : MonoBehaviour
 
     private IEnumerator LoadCard(TcgCard theTcgCard)
     {
+        cardModel = theTcgCard;
         while (!Ready)
         {
             yield return null;

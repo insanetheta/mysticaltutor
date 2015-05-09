@@ -2,7 +2,6 @@ using System;
 using System.Globalization;
 using System.Linq;
 using DealFinder.Network.Models;
-using UnityEditor;
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;

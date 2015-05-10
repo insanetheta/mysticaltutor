@@ -58,6 +58,8 @@ public class FrontPageController : MonoBehaviour
     public delegate void ButtonClickAction();
     public static event ButtonClickAction OnFormatClicked;
     public static event ButtonClickAction OnMoneyClicked;
+
+    private static Color buttonSelectedColor = new Color(68f / 255f, 255f / 255f, 53f / 255f);
     
     void FormatButtonsUpdate()
     {
@@ -68,15 +70,15 @@ public class FrontPageController : MonoBehaviour
 
         if (CardDataManager.GetInstance().currentFormatFilter == CardDataManager.FormatFilters.Standard)
         {
-            StandardFilterButton.BackgroundColor.defaultColor = Color.black;
+            StandardFilterButton.BackgroundColor.defaultColor = buttonSelectedColor;
         }
         else if (CardDataManager.GetInstance().currentFormatFilter == CardDataManager.FormatFilters.Modern)
         {
-            ModernFilterButton.BackgroundColor.defaultColor = Color.black;
+            ModernFilterButton.BackgroundColor.defaultColor = buttonSelectedColor;
         }
         else if (CardDataManager.GetInstance().currentFormatFilter == CardDataManager.FormatFilters.Legacy)        
         {
-            LegacyFilterButton.BackgroundColor.defaultColor = Color.black;
+            LegacyFilterButton.BackgroundColor.defaultColor = buttonSelectedColor;
         }
         StandardFilterButton.BackgroundColor.UpdateColor(true, true);
         ModernFilterButton.BackgroundColor.UpdateColor(true, true);
@@ -94,15 +96,15 @@ public class FrontPageController : MonoBehaviour
 
         if (CardDataManager.GetInstance().currentMoneyFilter == 10)
         {
-            TenFilterButton.BackgroundColor.defaultColor = Color.black;
+            TenFilterButton.BackgroundColor.defaultColor = buttonSelectedColor;
         }
         else if (CardDataManager.GetInstance().currentMoneyFilter == 30)
         {
-            ThirtyFilterButton.BackgroundColor.defaultColor = Color.black;
+            ThirtyFilterButton.BackgroundColor.defaultColor = buttonSelectedColor;
         }
         else if (CardDataManager.GetInstance().currentMoneyFilter >= 30)        
         {
-            ThirtyPlusFilterButton.BackgroundColor.defaultColor = Color.black;
+            ThirtyPlusFilterButton.BackgroundColor.defaultColor = buttonSelectedColor;
         }
         TenFilterButton.BackgroundColor.UpdateColor(true, true);
         ThirtyFilterButton.BackgroundColor.UpdateColor(true, true);
@@ -140,6 +142,9 @@ public class FrontPageController : MonoBehaviour
         GridRef.GetComponent<UIGrid>().repositionNow = true;
     }
 
+    private static Color baseItemColor = new Color(208f / 255f, 208f / 255f, 208f / 255f);
+    private static Color variantItemColor = new Color(171f / 255f, 171f / 255f, 171f / 255f);
+
     public void InstantiateNewCard(TcgCard newCard, int sortOrder)
     {
         GameObject newGO = Instantiate(Resources.Load<GameObject>("FrontPage/Item")) as GameObject;
@@ -147,7 +152,6 @@ public class FrontPageController : MonoBehaviour
         CardObject tmp = new CardObject(newCard, newGO);
 
         CardHistory.Add(tmp);
-
         newGO.name = sortOrder.ToString();
         newGO.transform.parent = GridRef;
 		newGO.GetComponent<FrontPageButton>().TheCardRef = newCard;
@@ -155,6 +159,8 @@ public class FrontPageController : MonoBehaviour
         newGO.transform.Find("Mid").GetComponent<UILabel>().text = "Mid: " + string.Format("{0:C}", newCard.AvgPrice);
         newGO.transform.Find("Low").GetComponent<UILabel>().text = "Low: " + string.Format("{0:C}", newCard.LowPrice);
         newGO.transform.Find("Ratio").GetComponent<UILabel>().text = "+ " + string.Format("{0:C}", newCard.AvgPrice - newCard.LowPrice);
+        newGO.transform.Find("Shadow").GetComponent<UILabel>().text = "+ " + string.Format("{0:C}", newCard.AvgPrice - newCard.LowPrice);
+        newGO.transform.Find("Background").GetComponent<UISprite>().color = sortOrder % 2 == 1 ? baseItemColor : variantItemColor;
         newGO.transform.localScale = new Vector3(1, 1, 1);
     }
 

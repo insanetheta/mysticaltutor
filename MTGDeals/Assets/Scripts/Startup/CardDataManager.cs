@@ -21,6 +21,29 @@ internal class CardDataManager : MonoBehaviour
 
     private List<TcgCard> CardsAll;
 
+    /// <summary>
+    /// Fetch Base Card Data containing all cards
+    /// </summary>
+    /// <returns></returns>
+    public IEnumerator BaseCardsRequest()
+    {
+        List<BaseCard> baseCards;
+        if (!PlayerPrefs.HasKey("BaseCards"))
+        {
+            Transaction<List<BaseCard>> t = new Transaction<List<BaseCard>>();
+            //yield return StartCoroutine(t.HttpGetRequest("http://localhost:8000/static/card_data/card_data_base.json"));
+            yield return StartCoroutine(t.HttpGetRequest("http://gbackdesigns.com/dealfinder/static/card_data/card_data_base.json"));
+            baseCards = t.GetResponse();
+        }
+        else
+        {
+            string cardsString = PlayerPrefs.GetString("BaseCards", "None");
+            baseCards = cardsString.CreateFromJsonString<List<BaseCard>>();
+        }
+        
+        Debug.Log(baseCards[0]);
+    }
+
     public IEnumerator CardListRequest()
     {
         Transaction<List<TcgCard>> t = new Transaction<List<TcgCard>>();

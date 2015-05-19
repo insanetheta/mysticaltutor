@@ -16,7 +16,8 @@ public class AppStartup : MonoBehaviour
     IEnumerator Startup()
     {
         //Initiate The Singletons
-        Transaction<List<TcgCard>> t = new Transaction<List<TcgCard>>();
+        //Transaction<List<TcgCard>> t = new Transaction<List<TcgCard>>();
+        yield return StartCoroutine(CardDataManager.GetInstance().BaseCardsRequest());
         yield return StartCoroutine(CardDataManager.GetInstance().CardListRequest());
 
         ViewController.GetInstance().Initialize(ViewAnchorRef.transform);

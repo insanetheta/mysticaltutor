@@ -7,6 +7,8 @@ from django.shortcuts import render
 from dealfinder.models import Product
 from dealfinder.models import Card
 
+from django.db.models import F
+
 def index(request):
 	card_list = Card.objects.exclude(product=None).order_by('name')
 	return render(request, 'dealfinder/index.html', {'card_list': card_list})
@@ -39,12 +41,8 @@ def getCardProductDictList(card_list):
 		card_dict['name'] = card.name
 		card_dict['multiverseId'] = card.multiverseId
 		card_dict['rarity'] = card.rarity
-		mtgFormats = []
-		for mtgFormat in card.formats.split(","):
-			mtgFormats.append(mtgFormat.strip("'" '"' ' '))
-		mtgFormats = filter(isRelevantFormat, mtgFormats)
 		#formats.append(card.formats[0])
-		card_dict['formats'] = mtgFormats
+		card_dict['formats'] = getCardFormats(card.formats)
 		#card_dict['formats'] = filter(lambda x: isRelevantFormat(x), card.formats)
 		card_dict['hiPrice'] = card.product.hiPrice
 		card_dict['lowPrice'] = card.product.lowPrice
@@ -60,16 +58,18 @@ def getCardDictList(card_list):
 		card_dict['name'] = card.name
 		card_dict['multiverseId'] = card.multiverseId
 		card_dict['rarity'] = card.rarity
-		formats = []
-		#for format in card.formats:
-		#	formats.append(format)
-		#formats = filter(lambda x: isRelevantFormat(x), card.formats)
-		#formats.append(card.formats[0])
-		card_formats = formats
-		card_dict['formats'] = card_formats#str(card_formats).strip('[]')
+		card_dict['formats'] = getCardFormats(card.formats)
 		#card_dict['formats'] = card.formats
 		card_dict_list.append(card_dict)
 	return card_dict_list
+
+def getCardFormats(formats_str):
+	mtgFormats = []
+	for mtgFormat in formats_str.split(","):
+		mtgFormats.append(mtgFormat.strip("'" '"' ' '))
+	mtgFormats = filter(isRelevantFormat, mtgFormats)
+	return  mtgFormats
+
 
 def isRelevantFormat(format):
 	if format.lower() == 'standard'.lower():
@@ -90,6 +90,11 @@ def formatFilter(card, format_name):
 	print(format_name)
 	in_format = format_name in card.formats
 	return in_format
+
+def bestRatioFilter(request):
+	card_list = Card.objects.exclude(product=None)
+	card_list = sorted(card_list, key=lambda card: (card.product.avgPrice - card.product.lowPrice), reverse=True)
+	return JsonResponse(getCardProductDictList((card_list)), safe=False)
 
 def singleCardApi(request, card_name):
 	card_list = Card.objects.exclude(product=None).filter(name__iexact=card_name)

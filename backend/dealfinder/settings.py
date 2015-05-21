@@ -16,7 +16,10 @@ TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 
-STATIC_ROOT = PROJECT_ROOT
+STATIC_ROOT = PROJECT_ROOT + '/../../public_html/dealfinder/static/'
+#STATIC_ROOT =
+#STATIC_URL = '/static/'
+STATIC_URL = '/static/'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
@@ -87,4 +90,4 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
-STATIC_URL = '/static/'
+

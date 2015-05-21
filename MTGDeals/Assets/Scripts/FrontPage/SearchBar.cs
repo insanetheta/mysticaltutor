@@ -1,5 +1,7 @@
 using System.Linq;
+using System.Net.Mime;
 using System.Reflection.Emit;
+using System.Security.Cryptography;
 using UnityEngine;
 using System.Collections;
 using System;
@@ -9,6 +11,7 @@ public class SearchBar : MonoBehaviour
     private UILabel CardToSearchFor;
     private TouchScreenKeyboard Keyboard;
     private bool KeyboardOn = false;
+    private ScrollingTextField TextField;
 
     void Start()
     {
@@ -19,9 +22,12 @@ public class SearchBar : MonoBehaviour
     {
         CardToSearchFor.text = "";
         Keyboard = TouchScreenKeyboard.Open(CardToSearchFor.text, TouchScreenKeyboardType.Default, false, false, false);
+        
         if (!KeyboardOn)
         {
             KeyboardOn = true;
+            TextField = new GameObject("TextField").AddComponent<ScrollingTextField>();
+            TextField.Initialize(transform, "FrontPage/SearchItem", collider.bounds.size.x, 300);
             StartCoroutine(BeginSearch());
         }
     }
@@ -30,6 +36,8 @@ public class SearchBar : MonoBehaviour
     {
         while (KeyboardOn)
         {
+            bool doOnce = false;
+
             if (Input.GetKeyDown(KeyCode.Return))
             {
                 KeyboardOn = false;
@@ -37,8 +45,18 @@ public class SearchBar : MonoBehaviour
                 GameObject newView = ViewController.GetInstance().CreateView("CardDetail/CardDetail");
                 newView.GetComponent<CardDetailController>().coLoadCard(CardDataManager.GetInstance().FindCardByText(CardToSearchFor.text));
             }
-            
-            CardToSearchFor.text += Input.inputString;
+
+            if (Input.inputString != "")
+            {
+                CardToSearchFor.text += Input.inputString;
+                doOnce = true;
+            }
+
+            if (CardToSearchFor.text.Count() > 2 && doOnce)
+            {
+                yield return StartCoroutine(TextField.CreateList(CardToSearchFor.text));
+                doOnce = false;
+            }
 
             if (Input.GetKeyDown(KeyCode.Delete))
             {

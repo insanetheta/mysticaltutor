@@ -19,7 +19,7 @@ internal class CardDataManager : MonoBehaviour
         return CDM;
     }
 
-    private List<TcgCard> CardsAll;
+    public List<TcgCard> CardsAll { private set; get; }
 
     public IEnumerator CardListRequest()
     {

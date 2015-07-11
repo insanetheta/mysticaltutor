@@ -64,7 +64,8 @@ public class SpringPanel : IgnoreTimeScale
 		Vector3 offset = after - before;
 		Vector4 cr = mPanel.clipRange;
 		cr.x -= offset.x;
-		cr.y -= offset.y;
+	    //target.x = 0;
+        cr.y -= offset.y;
 		mPanel.clipRange = cr;
 
 		if (mDrag != null) mDrag.UpdateScrollbars(false);

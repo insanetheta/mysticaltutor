@@ -27,7 +27,7 @@ public class SearchBar : MonoBehaviour
         {
             KeyboardOn = true;
             TextField = new GameObject("TextField").AddComponent<ScrollingTextField>();
-            TextField.Initialize(transform, "FrontPage/SearchItem", collider.bounds.size.x, 300);
+            TextField.Initialize(transform, "FrontPage/SearchItem", 30, 300);
             StartCoroutine(BeginSearch());
         }
     }
@@ -52,10 +52,11 @@ public class SearchBar : MonoBehaviour
                 doOnce = true;
             }
 
-            if (CardToSearchFor.text.Count() > 2 && doOnce)
+            //if (CardToSearchFor.text.Count() > 2 && doOnce)
+            if (doOnce)
             {
                 yield return StartCoroutine(TextField.CreateList(CardToSearchFor.text));
-                doOnce = false;
+                //doOnce = false;
             }
 
             if (Input.GetKeyDown(KeyCode.Delete))

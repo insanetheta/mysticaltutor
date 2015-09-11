@@ -28,20 +28,34 @@ internal class CardDataManager : MonoBehaviour
     public IEnumerator BaseCardsRequest()
     {
         List<BaseCard> baseCards;
-        if (!PlayerPrefs.HasKey("BaseCards"))
+
+        string allCardsFile = "BaseCards";
+
+        string allCardsText = LocalStorage.LoadFileText(allCardsFile);
+        
+        if (allCardsText.Length < 1)
         {
             Transaction<List<BaseCard>> t = new Transaction<List<BaseCard>>();
+            Debug.Log("Fetching cards http: " + Time.realtimeSinceStartup);
             //yield return StartCoroutine(t.HttpGetRequest("http://localhost:8000/static/card_data/card_data_base.json"));
             yield return StartCoroutine(t.HttpGetRequest("http://gbackdesigns.com/dealfinder/static/card_data/card_data_base.json"));
-            PlayerPrefs.SetString("BaseCards", t.GetText());
+            Debug.Log("Setting String: " + Time.realtimeSinceStartup);
+
+            LocalStorage.SaveFile(t.GetText(), allCardsFile);
+
+            Debug.Log("converting string to deserialized objects: " + Time.realtimeSinceStartup);
             baseCards = t.GetResponse();
+            Debug.Log("finished: " + Time.realtimeSinceStartup);
         }
         else
         {
-            string cardsString = PlayerPrefs.GetString("BaseCards", "None");
-            baseCards = cardsString.CreateFromJsonString<List<BaseCard>>();
+            Debug.Log("Convert Cards String: " + Time.realtimeSinceStartup);
+            baseCards = allCardsText.CreateFromJsonString<List<BaseCard>>();
+            Debug.Log("Converted: " + Time.realtimeSinceStartup);
         }
     }
+
+
 
     public IEnumerator CardListRequest()
     {
@@ -49,7 +63,6 @@ internal class CardDataManager : MonoBehaviour
         yield return StartCoroutine(t.HttpGetRequest("http://gbackdesigns.com/dealfinder/mobile/api"));
         //yield return StartCoroutine(t.HttpGetRequest("http://127.0.0.1:8000/dealfinder/mobile/api"));
         CardsAll = t.GetResponse();
-        //Debug.Log(CardsAll.Count);
         yield return null;
     }
 

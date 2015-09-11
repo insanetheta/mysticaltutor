@@ -9,8 +9,8 @@ using System.Collections.Generic;
 public class FrontPageController : MonoBehaviour
 {
     private Transform GridRef;
-    private UIDraggablePanel ScrollingTextPanel;
     public List<CardObject> CardHistory = new List<CardObject>();
+    private GameObject ScrollingText;
 
     private StandardButton StandardFilterButton;
     private ModernButton ModernFilterButton;
@@ -21,8 +21,8 @@ public class FrontPageController : MonoBehaviour
 
     void Start()
     {
+        ScrollingText = transform.Find("ScrollingText").gameObject;
         GridRef = transform.FindChild("ScrollingText/Grid");
-        ScrollingTextPanel = transform.Find("ScrollingText").GetComponent<UIDraggablePanel>();
         OnFormatClicked = FormatButtonsUpdate;
         OnMoneyClicked = MoneyButtonsUpdate;
         StartCoroutine(Initialize());
@@ -63,7 +63,6 @@ public class FrontPageController : MonoBehaviour
     
     void FormatButtonsUpdate()
     {
-        Debug.Log("BLEF");
         StandardFilterButton.BackgroundColor.defaultColor = Color.white;
         ModernFilterButton.BackgroundColor.defaultColor = Color.white;
         LegacyFilterButton.BackgroundColor.defaultColor = Color.white;
@@ -89,7 +88,6 @@ public class FrontPageController : MonoBehaviour
 
     void MoneyButtonsUpdate()
     {
-        Debug.Log("BLORF");
         TenFilterButton.BackgroundColor.defaultColor = Color.white;
         ThirtyFilterButton.BackgroundColor.defaultColor = Color.white;
         ThirtyPlusFilterButton.BackgroundColor.defaultColor = Color.white;
@@ -140,6 +138,8 @@ public class FrontPageController : MonoBehaviour
         }
         //ScrollingTextPanel.ResetPosition();
         GridRef.GetComponent<UIGrid>().repositionNow = true;
+        GridRef.localPosition = new Vector3(0,0,0);
+       // ScrollingText.transform.localPosition -= new Vector3(0, 10f, 0);
     }
 
     private static Color baseItemColor = new Color(208f / 255f, 208f / 255f, 208f / 255f);
@@ -162,6 +162,7 @@ public class FrontPageController : MonoBehaviour
         newGO.transform.Find("Shadow").GetComponent<UILabel>().text = "+ " + string.Format("{0:C}", newCard.AvgPrice - newCard.LowPrice);
         newGO.transform.Find("Background").GetComponent<UISprite>().color = sortOrder % 2 == 1 ? baseItemColor : variantItemColor;
         newGO.transform.localScale = new Vector3(1, 1, 1);
+        newGO.transform.localPosition = new Vector3(0, 0, 0);
     }
 
     /// <summary>

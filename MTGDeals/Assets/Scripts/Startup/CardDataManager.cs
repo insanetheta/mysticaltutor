@@ -19,7 +19,7 @@ internal class CardDataManager : MonoBehaviour
         return CDM;
     }
 
-    private List<TcgCard> CardsAll;
+    public List<TcgCard> CardsAll { private set; get; }
 
     /// <summary>
     /// Fetch Base Card Data containing all cards
@@ -41,8 +41,6 @@ internal class CardDataManager : MonoBehaviour
             string cardsString = PlayerPrefs.GetString("BaseCards", "None");
             baseCards = cardsString.CreateFromJsonString<List<BaseCard>>();
         }
-        
-        Debug.Log(baseCards[0]);
     }
 
     public IEnumerator CardListRequest()
@@ -98,7 +96,7 @@ internal class CardDataManager : MonoBehaviour
         List<TcgCard> filteredCards = CardsAll;
         currentFormatFilter = FormatFilterMap[PlayerPrefs.GetInt("FormatFilter", 0)];
         currentMoneyFilter = PlayerPrefs.GetInt("MoneyFilter", 0);
-        CultureInfo englishLang = CultureInfo.InvariantCulture;
+        //CultureInfo englishLang = CultureInfo.InvariantCulture;
 
         filteredCards = filteredCards.Where(card =>
             (card.LowPrice <= currentMoneyFilter || 
@@ -108,7 +106,6 @@ internal class CardDataManager : MonoBehaviour
                 (format => 
                     format.IndexOf(currentFormatFilter.ToString(), StringComparison.OrdinalIgnoreCase) >= 0))
                 ).ToList();
-        Debug.Log(filteredCards.Count);
         return filteredCards;
     }
 

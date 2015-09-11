@@ -1,0 +1,144 @@
+Greg,
+
+Below you will find your partner key and password to access our full API information.
+
+Again, keep in mind that the API information is only available to developers who are creating informational sites or apps and may not be utilized to create store fronts or competing marketplaces.
+
+Changes in X3:
+-High/Median/Low are now the same as the store and content sites
+-Foil Median prices for Magic Cards
+-Different messages if the product is not found vs no pricing available
+-New links to the new catalog pages for Magic and Yugioh
+
+API: Hi-Mid-Low X3:
+
+Example URLs:
+
+Magic: 
+http://partner.tcgplayer.com/x3/phl.asmx/p?pk=TCGTEST&s=New Phyrexia&p=Flameborn Viron
+
+YuGiOh: 
+http://partner.tcgplayer.com/x3/ygophl.asmx/p?pk=TCGTEST&s=Duelist Pack 11 - Crow&p=Black Return&n=DP11-EN030
+
+WoWTCG: 
+http://partner.tcgplayer.com/x3/wowtcgphl.asmx/p?pk=TCGTEST&s=War of the Elements&p=Malfurion Stormrage
+
+Pokemon:
+http://partner.tcgplayer.com/x3/pkphl.asmx/p?pk=TCGTEST&s=Black and White&p=Pikachu
+
+Redakai:
+http://partner.tcgplayer.com/x3/radphl.asmx/p?pk=TCGTEST&s=Redakai Base Set&p=Scarachnoz - Gold Animal
+
+Heroclix:
+http://partner.tcgplayer.com/x3/hxphl.asmx/p?pk=TCGTEST&s=The Incredible Hulk&p=Ghost Rider&pn=37
+
+Vanguard
+http://partner.tcgplayer.com/x3/vanphl.asmx/p?pk=TCGTEST&s=EB%20-%20Dazzling%20Divas&p=PRISM-Promise,%20Leyte
+
+pk = your partner key
+s = Set Name
+Magic Only: if you leave set name blank the calculation will find the cheapest min price across all sets. (http://partner.tcgplayer.com/x3/phl.asmx/p?pk=TCGTEST&s=&p=Wrath of God)
+p = Product name
+n = Card Number (YuGiOh only), leave blank to use set name and product name
+pn = Product Number - required for HeroClix Only
+
+(Magic SetName List: http://store.tcgplayer.com/magic/)
+
+*The Set Name and product name will need to match the information in our store in order to receive results.
+
+Output:
+
+-<products>
+<product>
+<id>39515</id>
+<hiprice>0.48</hiprice>
+<lowprice>0.02</lowprice>
+<avgprice>0.12</avgprice>
+<foilavgprice>0.25</foilavgprice>
+<link>http://store.tcgplayer.com/magic/new-phyrexia/flameborn-viron?partner=TCGTEST</link>
+</product>
+</products>
+
+API: Store Prices X3:
+
+Example URLs::
+
+Magic:
+http://partner.tcgplayer.com/x3/pv.asmx/p?pk=TCGTEST&p=Sword of War and Peace&s=New Phyrexia&v=3
+
+YuGiOh:
+http://partner.tcgplayer.com/x3/ygopv.asmx/p?pk=TCGTEST&p=Black Return&s=Duelist Pack 11 - Crow&n=DP11-EN030&v=3
+
+WoWTcg:
+http://partner.tcgplayer.com/x3/wowtcgpv.asmx/p?pk=TCGTEST&p=Malfurion Stormrage&s=War of the Elements&v=3
+
+Pokemon:
+http://partner.tcgplayer.com/x3/pkpv.asmx/p?pk=TCGTEST&p=Pikachu&s=Black and White&v=3
+
+Redakai:
+http://partner.tcgplayer.com/x3/radpv.asmx/p?pk=TCGTEST&p=Scarachnoz - Gold Animal&s=Redakai Base Set&v=3
+
+HeroClix:
+http://partner.tcgplayer.com/x3/hxpv.asmx/p?pk=TCGTEST&s=The Incredible Hulk&p=Ghost Rider&pn=37&v=5
+
+Vanguard:
+http://partner.tcgplayer.com/x3/vanpv.asmx/p?pk=TCGTEST&s=EB%20-%20Dazzling%20Divas&p=PRISM-Promise,%20Leyte&v=5
+
+For multiple pricing or deck collection inquires we request that once per day between 3:00am - 7:00am EST you pull down all pricing for all products on TCGplayer that you will be listing on your site / app. You are responsible for storing this pricing in your own database, as your database is what should be used for pricing of decks, collections or any inquiry within that 24hr period that requires more than one price inquiry at at time.
+
+pk = your partner key
+s = Set Name
+p = Product name
+pn = Product Number - required for HeroClix only 
+v = Number of the vendors to return. There is a max of 8
+n = card number, (YuGiOh Only) leave blank to use set name and product name
+
+*The Set Name and product name will need to match the information in our store in order to receive result.
+
+OutPut:
+
+<prices>
+<supplier>
+<name>StoreNameHere</name>
+<condition>Unplayed</condition>
+<qty>40</qty>
+<price>.04</price>
+<link>http://store.tcgplayer.com/shoppingcart.aspx?id=18999757&q=1&partner=tcgtest</link>
+</supplier>
+<note><b>Store.TCGplayer.com</b> allows you to buy cards from any of our vendors, all at the same time, in a simple checkout experience. Shop, Compare & Save with TCGplayer.com!<br><br>(Earn money and receive full Pricing & Card data for your App/Site by <a href="http://store.tcgplayer.com/">Contacting TCGplayer</a>)</note>
+</prices>
+
+The note section must be displayed under the pricing data in some format without any wording changes. This message will change periodically to promote different items, such as Presales. But all links from within the notes section will reflect your Partner code for sales tracking.
+
+API: Mass Entry - Add Products
+PLEASE NOTE: A form post version of the Mass Entry is also available. Just POST to the same parameters. This version will allow us to handle larger deck sizes without issues.
+
+Example URL:
+http://store.tcgplayer.com/list/selectproductmagic.aspx?partner=TCGTEST&c=4 Jace, the Mind Sculptor||4 Squadron Hawk||4 Stoneforge Mystic||1 Batterskull||1 Dismember||3 Divine Offering||3 Duress||3 Go for the Throat||3 Inquisition of Kozilek||2 Mana Leak||4 Preordain||1 Sword of Feast and Famine||1 Sword of War and Peace||1 Celestial Colonnade||4 Creeping Tar Pit||4 Darkslick Shores||2 Glacial Fortress||1 Island||4 Marsh Flats||4 Plains||4 Seachrome Coast||2 Swamp||1 Batterskull||2 Celestial Purge||3 Condemn||1 Day of Judgment||1 Divine Offering||4 Flashfreeze||1 Gideon Jura||1 Go for the Throat||1 Memoricide||
+
+partner = your partner key
+c = list of cards with qty delimited by ||
+
+Example:
+
+Format:
+4 Jace, the Mind Sculptor
+4 Squadron Hawk
+4 Stoneforge Mystic
+1 Batterskull
+1 Dismember
+3 Divine Offering
+3 Duress
+
+Converted to:
+4 Jace, the Mind Sculptor||4 Squadron Hawk||4 Stoneforge Mystic||1 Batterskull||1 Dismember||3 Divine Offering||3 Duress
+
+Admin Panel:
+
+Once you receive your new Partner Key, to monitor your sales data associated with your Partner key please visit the following URL and enter in your username/password:
+
+http://partner.tcgplayer.com/admin/default.aspx
+
+✔ USER: DealFinder
+✔ PASS: %Hp0aj&R
+✔ PARTNER KEY: DEALFINDER

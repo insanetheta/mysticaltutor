@@ -3,7 +3,7 @@ from django.utils import encoding
 
 class Product(models.Model):
 	productName = models.CharField(default='none', max_length=200)
-	tcgId = models.IntegerField()
+	tcgId = models.IntegerField(default=-1, unique=True)
 	hiPrice = models.FloatField()
 	lowPrice = models.FloatField()
 	avgPrice = models.FloatField()
@@ -46,7 +46,11 @@ class CardSet(models.Model):
 		self.block = setInst.block
 		self.cardIds = setInst.cardIds
 		return self
-	
+
+	def getCardIds(self):
+		cardIdArr = self.cardIds.replace(' ', '').split(',')
+		return cardIdArr
+
 	@classmethod
 	def create(cls, jsonCardSetObject):
 		cardSet = cls()

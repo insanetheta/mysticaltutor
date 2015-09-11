@@ -35,13 +35,13 @@ class Command(BaseCommand):
 			except CardSet.DoesNotExist:
 				set = CardSet.create(setDict)
 				set.save()
-			print(set.name)
+			print(unicode(set.name).encode('utf-8'))
 
 			for cardDict in setDict['cards']:
 				cardUpdatedCount += 1
 				product = self.getProductFromName(cardDict['name'])
 				try:
-					print(cardDict['name'])
+					print(unicode(cardDict['name']).encode('utf-8'))
 				except:
 					print('Couldnt Print Name')
 				try:

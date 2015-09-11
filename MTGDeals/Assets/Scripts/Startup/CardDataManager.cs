@@ -33,6 +33,7 @@ internal class CardDataManager : MonoBehaviour
             Transaction<List<BaseCard>> t = new Transaction<List<BaseCard>>();
             //yield return StartCoroutine(t.HttpGetRequest("http://localhost:8000/static/card_data/card_data_base.json"));
             yield return StartCoroutine(t.HttpGetRequest("http://gbackdesigns.com/dealfinder/static/card_data/card_data_base.json"));
+            PlayerPrefs.SetString("BaseCards", t.GetText());
             baseCards = t.GetResponse();
         }
         else

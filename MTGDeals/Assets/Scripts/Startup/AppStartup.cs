@@ -21,6 +21,5 @@ public class AppStartup : MonoBehaviour
         yield return StartCoroutine(CardDataManager.GetInstance().CardListRequest());
 
         ViewController.GetInstance().Initialize(ViewAnchorRef.transform);
-
     }
 }

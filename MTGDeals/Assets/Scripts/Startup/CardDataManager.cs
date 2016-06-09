@@ -8,8 +8,6 @@ using DealFinder.Network.Models;
 
 internal class CardDataManager : MonoBehaviour
 {
-    private static CardDataManager CDM;
-
     public static CardDataManager GetInstance()
     {
         if (CDM == null)
@@ -20,6 +18,26 @@ internal class CardDataManager : MonoBehaviour
     }
 
     public List<TcgCard> CardsAll { private set; get; }
+    
+    private static CardDataManager CDM;
+    public FormatFilters currentFormatFilter;
+    public int currentMoneyFilter;
+
+    public enum FormatFilters
+    {
+        None,
+        Standard,
+        Modern,
+        Legacy
+    }
+
+    private static readonly Dictionary<int, FormatFilters> FormatFilterMap = new Dictionary<int, FormatFilters>()
+    {
+        {0, FormatFilters.None},
+        {1, FormatFilters.Standard},
+        {2, FormatFilters.Modern},
+        {3, FormatFilters.Legacy}
+    };
 
     /// <summary>
     /// Fetch Base Card Data containing all cards
@@ -55,8 +73,6 @@ internal class CardDataManager : MonoBehaviour
         }
     }
 
-
-
     public IEnumerator CardListRequest()
     {
         Transaction<List<TcgCard>> t = new Transaction<List<TcgCard>>();
@@ -80,18 +96,6 @@ internal class CardDataManager : MonoBehaviour
         return null;
     }
 
-    public FormatFilters currentFormatFilter;
-
-    public int currentMoneyFilter;
-
-    private static readonly Dictionary<int, FormatFilters> FormatFilterMap = new Dictionary<int, FormatFilters>()
-    {
-        {0, FormatFilters.None},
-        {1, FormatFilters.Standard},
-        {2, FormatFilters.Modern},
-        {3, FormatFilters.Legacy}
-    };
-
     public void ChangeFormatFilter(FormatFilters target)
     {
         currentFormatFilter = target;
@@ -100,6 +104,7 @@ internal class CardDataManager : MonoBehaviour
 
     public void ChangeMoneyFilter(int target)
     {
+        Debug.Log(target);
         currentMoneyFilter = target;
         PlayerPrefs.SetInt("MoneyFilter", currentMoneyFilter);
     }
@@ -120,13 +125,5 @@ internal class CardDataManager : MonoBehaviour
                     format.IndexOf(currentFormatFilter.ToString(), StringComparison.OrdinalIgnoreCase) >= 0))
                 ).ToList();
         return filteredCards;
-    }
-
-    public enum FormatFilters
-    {
-        None,
-        Standard,
-        Modern,
-        Legacy
     }
 }

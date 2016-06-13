@@ -5,12 +5,12 @@ using DealFinder.Network.Models;
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class FrontPageController : MonoBehaviour
 {
-    private Transform GridRef;
     public List<CardObject> CardHistory = new List<CardObject>();
-    private GameObject ScrollingText;
+    private RectTransform ScrollingText;
 
     private StandardButton StandardFilterButton;
     private ModernButton ModernFilterButton;
@@ -21,8 +21,8 @@ public class FrontPageController : MonoBehaviour
 
     void Start()
     {
-        ScrollingText = transform.Find("ScrollingText").gameObject;
-        GridRef = transform.FindChild("ScrollingText/Grid");
+        ScrollingText = gameObject.GetComponent<RectTransform>().Find("ScrollingText").GetComponent<RectTransform>();
+        Debug.Log(ScrollingText.name);
         OnFormatClicked = FormatButtonsUpdate;
         OnMoneyClicked = MoneyButtonsUpdate;
         StartCoroutine(Initialize());
@@ -32,7 +32,7 @@ public class FrontPageController : MonoBehaviour
     {
         yield return new WaitForEndOfFrame();
         yield return StartCoroutine(CreateList());
-
+        /*
         StandardFilterButton = transform.Find("FrontPageButtons/StandardFilter").GetComponent<StandardButton>();
         StandardFilterButton.Clicked += OnFormatClicked;
 
@@ -53,6 +53,7 @@ public class FrontPageController : MonoBehaviour
 
         FormatButtonsUpdate();
         MoneyButtonsUpdate();
+         */
     }
 
     public delegate void ButtonClickAction();
@@ -116,7 +117,7 @@ public class FrontPageController : MonoBehaviour
 
     IEnumerator CreateList()
     {
-        foreach (Transform go in GridRef)
+        foreach (RectTransform go in ScrollingText)
         {
             Destroy(go.gameObject);
         }
@@ -139,12 +140,6 @@ public class FrontPageController : MonoBehaviour
         {
             InstantiateNewCard(filteredCards[i], i);
         }
-        //ScrollingTextPanel.ResetPosition();   
-        GridRef.localPosition = new Vector3(0,0,0);
-        GridRef.GetComponent<UIGrid>().Reposition();
-        //GridRef.parent.GetComponent<UIPanel>(). = new Vector3(0, 210, 0);
-        Debug.Log(GridRef.parent.name);
-       // ScrollingText.transform.localPosition -= new Vector3(0, 10f, 0);
     }
 
     private static Color baseItemColor = new Color(208f / 255f, 208f / 255f, 208f / 255f);
@@ -152,22 +147,20 @@ public class FrontPageController : MonoBehaviour
 
     public void InstantiateNewCard(TcgCard newCard, int sortOrder)
     {
-        GameObject newGO = Instantiate(Resources.Load<GameObject>("FrontPage/Item")) as GameObject;
+        GameObject newGO = Instantiate(Resources.Load<GameObject>("2.0/Item")) as GameObject;
 
         CardObject tmp = new CardObject(newCard, newGO);
 
         CardHistory.Add(tmp);
         newGO.name = sortOrder.ToString();
-        newGO.transform.parent = GridRef;
-		newGO.GetComponent<FrontPageButton>().TheCardRef = newCard;
-        newGO.transform.Find("Name").GetComponent<UILabel>().text = newCard.Name;
-        newGO.transform.Find("Mid").GetComponent<UILabel>().text = "Mid: " + string.Format("{0:C}", newCard.AvgPrice);
-        newGO.transform.Find("Low").GetComponent<UILabel>().text = "Low: " + string.Format("{0:C}", newCard.LowPrice);
-        newGO.transform.Find("Ratio").GetComponent<UILabel>().text = "+ " + string.Format("{0:C}", newCard.AvgPrice - newCard.LowPrice);
-        newGO.transform.Find("Shadow").GetComponent<UILabel>().text = "+ " + string.Format("{0:C}", newCard.AvgPrice - newCard.LowPrice);
-        newGO.transform.Find("Background").GetComponent<UISprite>().color = sortOrder % 2 == 1 ? baseItemColor : variantItemColor;
-        newGO.transform.localScale = new Vector3(1, 1, 1);
-        newGO.transform.localPosition = new Vector3(0, 0, 0);
+        newGO.transform.SetParent(ScrollingText);
+		//newGO.GetComponent<FrontPageButton>().TheCardRef = newCard;
+        newGO.transform.Find("Name").GetComponent<Text>().text = newCard.Name;
+        newGO.transform.Find("Mid").GetComponent<Text>().text = "Mid: " + string.Format("{0:C}", newCard.AvgPrice);
+        newGO.transform.Find("Low").GetComponent<Text>().text = "Low: " + string.Format("{0:C}", newCard.LowPrice);
+        newGO.transform.Find("Ratio").GetComponent<Text>().text = "+ " + string.Format("{0:C}", newCard.AvgPrice - newCard.LowPrice);
+        //newGO.transform.Find("Shadow").GetComponent<Text>().text = "+ " + string.Format("{0:C}", newCard.AvgPrice - newCard.LowPrice);
+        newGO.GetComponent<Image>().color = sortOrder % 2 == 1 ? baseItemColor : variantItemColor;
     }
 
     /// <summary>

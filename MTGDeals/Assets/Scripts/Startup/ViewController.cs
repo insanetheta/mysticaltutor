@@ -28,9 +28,7 @@ public class ViewController : MonoBehaviour
         AnchorRef = anchorRef;
         Views.Push(AnchorRef);
         GameObject FrontPage = Instantiate(Resources.Load<GameObject>("2.0/FrontPage")) as GameObject;
-        FrontPage.transform.parent = AnchorRef;
-        FrontPage.transform.localScale = new Vector3(1, 1, 1);
-        FrontPage.transform.localPosition = new Vector3(0, 0, 0);
+        FrontPage.transform.SetParent(AnchorRef, false);
 
         Views.Push(FrontPage.transform);
         //GameObject FrontPage = Instantiate(Resources.Load<GameObject>("CardDetail/CardDetail")) as GameObject;

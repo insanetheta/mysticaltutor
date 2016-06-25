@@ -32,8 +32,12 @@ public class FrontPageController : MonoBehaviour
     {
         yield return new WaitForEndOfFrame();
         yield return StartCoroutine(CreateList());
-        /*
-        StandardFilterButton = transform.Find("FrontPageButtons/StandardFilter").GetComponent<StandardButton>();
+
+        GameObject ModernFilterButton = Instantiate(Resources.Load<GameObject>("2.0/FrontPageButtons/ModernFilter")) as GameObject;
+        ModernFilterButton.transform.SetParent(this.GetComponent<RectTransform>().parent, false);
+        //ModernFilterButton.GetComponent<Button>().onClick.AddListener(() => { OnFormatClicked(); });
+
+        /*StandardFilterButton = transform.Find("FrontPageButtons/StandardFilter").GetComponent<StandardButton>();
         StandardFilterButton.Clicked += OnFormatClicked;
 
         ModernFilterButton = transform.Find("FrontPageButtons/ModernFilter").GetComponent<ModernButton>();
@@ -54,6 +58,7 @@ public class FrontPageController : MonoBehaviour
         FormatButtonsUpdate();
         MoneyButtonsUpdate();
          */
+         
     }
 
     public delegate void ButtonClickAction();

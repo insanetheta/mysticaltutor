@@ -6,7 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DealFinder.Network.Models;
 
-internal class CardDataManager : MonoBehaviour
+public class CardDataManager : MonoBehaviour
 {
     public static CardDataManager GetInstance()
     {
